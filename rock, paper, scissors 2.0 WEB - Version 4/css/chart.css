@@ -1,0 +1,210 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+/*
+body {
+	background-color: #e9efec;
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSIxMDAiPgo8cGF0aCBkPSJNMjggNjZMMCA1MEwwIDE2TDI4IDBMNTYgMTZMNTYgNTBMMjggNjZMMjggMTAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=);
+	font-family: "Oswald", "Helvetica Newe", Helvetica, sans-serif;
+}
+*/
+body {
+	background-color: #e9efec;
+}
+
+.doughNutTip {
+	position: absolute;
+	float: left;
+	min-width: 30px;
+	max-width: 300px;
+	padding: 5px 18px 6px;
+	border-radius: 2px;
+	background: rgba(255,255,255,.97);
+	color: #444;
+	font-size: 19px;
+	text-shadow: 0 1px 0 #fff;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 1.3;
+	letter-spacing: .06em;
+	box-shadow: 0 0 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.5);
+	-webkit-transform: all .3s;
+	-moz-transform: all .3s;
+	-ms-transform: all .3s;
+	-o-transform: all .3s;
+	transform: all .3s;
+	pointer-events: none;
+}
+.doughNutTip:after {
+	position: absolute;
+	left: 50%;
+	bottom: -6px;
+	content: "";
+	height: 0;
+	margin: 0 0 0 -6px;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	border-top: 6px solid rgba(255,255,255,.95);
+	line-height: 0;
+}
+
+.doughnutSummary{
+	width: 100%;
+	height: 10%;
+	margin: auto;
+	text-align: center;
+	position: relative;
+	top: -17em;
+}
+
+.doughnutSummaryTitle{
+	display: inline-block;
+}
+
+.doughnutSummaryNumber{
+	display: inline-block;
+	padding-left: .5em;
+}
+
+.chart path { cursor: pointer; }
+
+.chart{
+	font-size: 20px;
+	width: 100%;
+	height: 15em;
+	z-index: 500;
+	margin-top: 2em;
+}
+
+.percentNum{
+	font-size: 4.5em;
+	margin: 0em;
+	position: relative;
+	top: -4.2em;
+	left: 2.84em;
+	opacity: 1;
+	z-index: 0;
+	width: 26%;
+	padding: 0;
+	transform: scale(0);
+}
+
+#chart1 ul li:nth-child(1){
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 0px;
+	margin-right: -2%;
+}
+
+#chart1 ul li:nth-child(2){
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	margin-right: -2%;
+}
+
+#chart1 ul li:nth-child(3){
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 4px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 4px;
+}
+
+#chart2 ul li:nth-child(1){
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 0px;
+	margin-right: -2%;
+}
+
+#chart2 ul li:nth-child(2){
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	margin-right: -2%;
+}
+
+#chart2 ul li:nth-child(3){
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 4px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 4px;
+}
+
+#chart3 ul li:nth-child(1){
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 0px;
+	margin-right: -2%;
+}
+
+#chart3 ul li:nth-child(2){
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	margin-right: -2%;
+}
+
+#chart3 ul li:nth-child(3){
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 4px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 4px;
+}
+
+#chart1 ul[data-pie-id] li:nth-child(1) {
+	color: #ff0000;
+}
+
+#chart1 ul[data-pie-id] li:nth-child(2) {
+	color: #ce2323;
+}
+
+#chart1 ul[data-pie-id] li:nth-child(3) {
+	color: #db6060;
+}
+
+#chart2 ul[data-pie-id] li:nth-child(1) {
+	color: #019103;
+}
+
+#chart2 ul[data-pie-id] li:nth-child(2) {
+	color: #10ba10;
+}
+
+#chart2 ul[data-pie-id] li:nth-child(3) {
+	color: #09f209;
+}
+
+#chart3 ul[data-pie-id] li:nth-child(1) {
+	color: #0000ff;
+}
+
+#chart3 ul[data-pie-id] li:nth-child(2) {
+	color: #2323c6;
+}
+
+#chart3 ul[data-pie-id] li:nth-child(3) {
+	color: #6161ed;
+}
+
+/* How to change the pie color
+ul[data-pie-id] li:nth-child(1) {
+color: darkgreen;
+}
+
+ul[data-pie-id] li:nth-child(2) {
+color: yellow;
+}
+
+ul[data-pie-id] li:nth-child(3) {
+color: red;
+}
+*/

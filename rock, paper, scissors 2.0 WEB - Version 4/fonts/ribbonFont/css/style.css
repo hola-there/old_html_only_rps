@@ -1,0 +1,2667 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-size: 15px;
+	background: #3F2860;
+	font-family: sans-serif;
+	color: #FFF;
+}
+h1 {
+	font-size: 5px;
+	padding: 2.5em 0 5em;
+	margin:0;
+	/*display: none;*/
+}
+#wrapper {
+	text-align: center;
+	position: relative;
+	margin: 100px auto;
+	width: 90%;
+	border: 0.5em solid #FA8B60;
+	box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.19);
+	padding: 2%;
+}
+.letter-wrapper, .number-wrapper {
+	width: 5em;
+	height: 5em;
+	display: inline-block;
+	position: relative;
+	margin: 1em 0.2em;
+	padding: 0;	
+}
+
+figcaption {
+	display: block;
+	margin-top: 1em;
+	color: rgba(255, 255, 255, 0.14);
+}
+.letter, .number{
+	display: block;
+	margin: 0 auto;
+}
+
+/* I created the numbers myself...and modified a few letters */
+/* NUMBER 1
+-------------------------------------------------------- */
+.number1{
+	width: 4em;
+	height: 5em;
+}
+
+.number1 .top, .number1 .middle, .number1 .bottom, .number1 .extra, .number1 .extra2 {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+
+.number1 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+.number1 .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 4em;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+
+.number1 .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 linear-gradient(to right, #FA8B60, #A45B3F);
+}
+.number1 .middle:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	left: 3em;
+	top: 4em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B5F);
+}
+
+.number1 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 linear-gradient(to right, #FA8B5F, #A45B3F);
+}
+.number1 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 3em;
+	left: 2em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+
+.number1 .extra:before{
+	content: "";
+	position: absolute;
+	display: block;
+	left: 2em;
+	top: 4em;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.number1 .extra:after{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	left: -1em;
+	top: 4em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+
+.number1 .extra2:before{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	left: 4em;
+	top: 4em;
+	border-left: 1em solid #FA8B60;
+	border-top: 1em solid transparent;
+}
+.number1 .extra2:after{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	left: 4em;
+	top: 4em;
+	border-bottom: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+}
+/* NUMBER 2
+-------------------------------------------------------- */
+.number2{
+	width: 4em;
+	height: 5em;
+}
+.number2 .top, .number2 .middle, .number2 .bottom, .number2 .extra{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+
+.number2 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: .5em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+.number2 .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 linear-gradient(to left, #A45B3F, #FA8B60 1em, #A45B3F);
+}
+
+.number2 .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.number2 .middle:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 2em;
+	top: 2em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+
+.number2 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60 1em);
+}
+.number2 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 1em;
+	left: 3em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+
+.number2 .extra:before{
+	content: "";
+	position: absolute;
+	display: block;
+	left: 3em;
+	top: 4em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+}
+
+/* NUMBER 3
+-------------------------------------------------------- */
+.number3{
+	width: 4em;
+	height: 5em;
+}
+
+.number3 .top, .number3 .middle, .number3 .bottom, .number3 .extra, .number3 .extra2{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+
+.number3 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: .5em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+.number3 .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 linear-gradient(to left, #A45B3F, #FA8B60 1em, #A45B3F);
+}
+
+.number3 .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	left: 2em;
+	top: 2em;
+	background: #FA8B60 linear-gradient(to right, #FA8B60, #A45B3F);
+}
+.number3 .middle:after {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 2em;
+	left: 1em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+
+.number3 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.number3 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 1em;
+	left: 3em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+
+.number3 .extra:before{
+	content: "";
+	position: absolute;
+	display: block;
+	height: 1em;
+	left: 3em;
+	top: 2em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.number3 .extra:after{
+	content: "";
+	position: absolute;
+	display: block;
+	top: 3.5em;
+	height: .5em;
+	border-bottom: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+
+.number3 .extra2:before{
+	content: "";
+	position: absolute;
+	display: block;
+	height: 0em;
+	left: 1em;
+	top: 2em;
+	border-top: 1em solid #FA8B60;
+	border-left: 1em solid transparent;
+}
+
+/* NUMBER 4
+-------------------------------------------------------- */
+.number4{
+	width: 4em;
+	height: 5em;
+}
+
+.number4 .top, .number4 .right, .number4 .bottom {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+
+.number4 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2.5em;
+	height: 1.35em;
+	left: .5em;
+	top: 1.2em;
+	background: #FA8B60 linear-gradient(to right, #FA8B60 1em, #A45B3F);
+	transform: skewY(-45deg);
+}
+
+.number4 .right:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 4em;
+	left: 2em;
+	border-bottom: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+.number4 .right:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	left: 3em;
+	top: 3em;
+	border-bottom: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+}
+
+.number4 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1.5em;
+	height: 1.07em;
+	left: .5em;
+	top: 2.7em;
+	background: #FA8B60 linear-gradient(to right, #A45B3E .5em, #FA8B60);
+}
+.number4 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: .07em;
+	left: 2em;
+	top: 2.7em;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+
+/* NUMBER 5
+-------------------------------------------------------- */
+.number5{
+	width: 4em;
+	height: 5em;
+}
+
+.number5 .top, .number5 .left, .number5 .right, .number5 .bottom {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+
+.number5 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 0em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60 1em);
+}
+.number5 .top:after{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	left: 3em;
+	border-left: 1em solid #FA8B60;
+	border-top: 1em solid transparent;
+}
+
+.number5 .left:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 2em;
+	left: -1em;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.number5 .left:after{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	top: 3.55em;
+	border-top: .5em solid #FA8B60;
+}
+
+.number5 .right:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	left: 3em;
+	top: 2em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.number5 .right:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60, #A45B3F);
+}
+
+.number5 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.number5 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 4em;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+
+/* NUMBER 6
+-------------------------------------------------------- */
+.number6{
+	width: 4em;
+	height: 5em;
+}
+
+.number6 .top, .number6 .sides, .number6 .bottom, .number6 .extra {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+
+.number6 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60 1em);
+}
+.number6 .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	left: 3em;
+	border-left: 1em solid #FA8B60;
+	border-top: 1em solid transparent;
+}
+
+.number6 .sides:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 3em;
+	border-top: 1em solid transparent;
+	border-bottom: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+.number6 .sides:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 1em;
+	left: 3em;
+	top: 2em;
+	border-top: 1em solid transparent;
+	border-bottom: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+}
+
+.number6 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 linear-gradient(to right, #A45B3E, #FA8B60, #A45B3E);
+}
+.number6 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 linear-gradient(to right, #A45B3E, #FA8B60, #A45B3E);
+}
+
+.number6 .extra:before{
+	content: "";
+	position: absolute;
+	display: block;
+	left: 3em;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+
+/* NUMBER 7
+-------------------------------------------------------- */
+.number7{
+	width: 4em;
+	height: 5em;
+}
+
+.number7 .allInOne {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+
+.number7 .allInOne:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3em;
+	height: 1em;
+	background: #FA8B60 linear-gradient(to right, #FA8B60 1em, #A45B3F);
+}
+.number7 .allInOne:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 4em;
+	left: 2em;
+	border-left: 1em solid #FA8B60;
+	border-top: 1em solid transparent;
+	transform: skewX(-22deg);
+}
+
+
+/* NUMBER 8
+-------------------------------------------------------- */
+.number8{
+	width: 4em;
+	height: 5em;
+}
+
+.number8 .left, .number8 .right, .number8 .top, .number8 .bottom {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+
+.number8 .left:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 1em;
+	border-top: 1em solid transparent;
+	border-bottom: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+.number8 .left:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 1em;
+	top: 2em;
+	border-top: 1em solid transparent;
+	border-bottom: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+
+.number8 .right:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 1em;
+	top: 2em;
+	left: 3em;
+	border-top: 1em solid transparent;
+	border-bottom: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+}
+.number8 .right:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 1em;
+	left: 3em;
+	border-top: 1em solid transparent;
+	border-bottom: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+}
+
+.number8 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.number8 .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60, #A45B3F);
+}
+
+.number8 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60, #A45B3F);
+}
+
+/* NUMBER 9
+-------------------------------------------------------- */
+.number9{
+	width: 4em;
+	height: 5em;
+}
+
+.number9 .sides, .number9 .top, .number9 .bottom {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+
+.number9 .sides:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 1em;
+	border-top: 1em solid transparent;
+	border-bottom: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+.number9 .sides:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 3em;
+	left: 3em;
+	border-top: 1em solid transparent;
+	border-bottom: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+}
+
+.number9 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.number9 .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60, #A45B3F);
+}
+
+.number9 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 linear-gradient(to right, #FA8B60 1em, #A45B3F);
+}
+.number9 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 0em;
+	top: 4em;
+	border-bottom: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+
+/* NUMBER 0
+-------------------------------------------------------- */
+.number0{
+	width: 4em;
+	height: 5em;
+}
+
+.number0 .top, .number0 .sides, .number0 .bottom {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+
+.number0 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.number0 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 linear-gradient(to right, #A45B3F, #FA8B60, #A45B3F);
+}
+
+.number0 .sides:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 3em;
+	left: -1em;
+	border-top: 1em solid transparent;
+	border-bottom: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+.number0 .sides:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 3em;
+	left: 3em;
+	border-top: 1em solid transparent;
+	border-bottom: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+}
+
+/* LETTER A
+-------------------------------------------------------- */
+.a {
+	width: 4em;
+	height: 5em;
+}
+.a .bottom, .a .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+/* premier */
+.a .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+/* 2e */
+.a .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+/* 3e */
+.a .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+	/*border-image: linear-gradient(to top, #FA8B60, #A45B3F, #FA8B60) 1 100%;*/
+}
+/* 4e */
+.a .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0em;
+	width: 0em;
+	height: 4em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+/* SECOND LETTER A
+-------------------------------------------------------- */
+.a2 {
+	width: 4em;
+	height: 5em;
+}
+.a2 .bottom, .a2 .top, .a2 .ribbonExtra{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+/* premier */
+.a2 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+/* 2e */
+.a2 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+/* 3e */
+.a2 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 3em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* 4e */
+.a2 .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0em;
+	height: 3em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.a2 .ribbonExtra:before {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 4em;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+
+.a2 .ribbonExtra:after {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0em;
+	top: 4em;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* LETTER B
+-------------------------------------------------------- */
+.b {
+	width: 4em;
+	height: 5em;
+}
+.b .bottom, .b .middle, .b .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.b .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.b .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.b .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.b .middle:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 5em;
+	left: 0em;
+	background: #FA8B60;
+	/*	variant
+	border-top: 0em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+	*/
+}
+.b .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0em;
+	width: 0em;
+	height: 1em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.b .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0em;
+	width: 0em;
+	height: 1em;
+	bottom: 0;
+	border-top: 0em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* LETTER C
+-------------------------------------------------------- */
+.c {
+	width: 4em;
+	height: 5em;
+}
+.c .bottom, .c .middle, .c .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.c .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.c .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.c .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 3em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+	/*border-image: linear-gradient(to top, #FA8B60, #A45B3F, #FA8B60) 1 100%;*/
+}
+.c .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 1em;
+	right: 0;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+	/*border-image: linear-gradient(to top, #FA8B60, #A45B3F, #FA8B60) 1 100%;*/
+}
+.c .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 1em;
+	right: 0;
+	bottom: 0;
+	border-top: 0em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+	/*border-image: linear-gradient(to top, #FA8B60, #A45B3F, #FA8B60) 1 100%;*/
+}
+
+/* SECOND LETTER C
+-------------------------------------------------------- */
+.c2 {
+	width: 4em;
+	height: 5em;
+}
+.c2 .bottom, .c2 .middle, .c2 .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.c2 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.c2 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.c2 .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 3em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.c2 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	right: 0;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+.c2 .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0;
+	bottom: 0;
+	border-top: 0em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+
+/* LETTER D
+-------------------------------------------------------- */
+.d {
+	width: 4em;
+	height: 5em;
+}
+.d .bottom, .d .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.d .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.d .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.d .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 5em;
+	background: #FA8B60;
+}
+.d .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0em;
+	width: 0em;
+	height: 3em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* LETTER E
+-------------------------------------------------------- */
+.e {
+	width: 4em;
+	height: 5em;
+}
+.e .bottom, .e .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.e .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60 1em);
+}
+.e .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60 1em);
+}
+.e .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60 1em);
+}
+.e .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 3em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* LETTER F
+-------------------------------------------------------- */
+.f {
+	width: 4em;
+	height: 5em;
+}
+.f .bottom, .f .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.f .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60 1em);
+}
+.f .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60 1em);
+}
+.f .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+/* LETTER G
+-------------------------------------------------------- */
+.g {
+	width: 4em;
+	height: 5em;
+}
+.g .bottom, .g .middle, .g .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.g .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3em;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60 1em);
+}
+.g .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.g .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	top: 2em;
+	right: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #FA8B60, #A45B3F);
+}
+.g .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 3em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+	/*border-image: linear-gradient(to top, #FA8B60, #A45B3F, #FA8B60) 1 100%;*/
+}
+.g .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 1em;
+	right: 0;
+	bottom: 0;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+	/*border-image: linear-gradient(to top, #FA8B60, #A45B3F, #FA8B60) 1 100%;*/
+}
+/* LETTER H
+-------------------------------------------------------- */
+.h {
+	width: 4em;
+	height: 5em;
+}
+.h .bottom, .h .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.h .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	top:2em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.h .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 5em;
+	background: #FA8B60;
+}
+.h .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 5em;
+	right: 0;
+	background: #FA8B60 ;
+}
+/* SECOND LETTER H
+-------------------------------------------------------- */
+.h2 {
+	width: 4em;
+	height: 5em;
+}
+.h2 .bottom, .h2 .top, .h2 .middle{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.h2 .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	top:2em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.h2 .bottom:before{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	top: 4em;
+	left: 3em;
+	border-bottom: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+}
+.h2 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	top: 4em;
+	border-bottom: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+.h2 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 4em;
+	right: 0;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+/* LETTER I
+-------------------------------------------------------- */
+.i {
+	width: 4em;
+	height: 5em;
+}
+.i .bottom, .i .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.i .bottom:before {
+
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 3em;
+	left: 1.5em;
+	top: 1em;
+	background: #FA8B60 -webkit-linear-gradient( bottom, #A45B3F, #FA8B60 1em, #FA8B60 2em, #A45B3F);
+	background: #FA8B60 linear-gradient( to top, #A45B3F, #FA8B60 1em, #FA8B60 2em, #A45B3F);
+
+}
+.i .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 4em;
+	height: 1em;
+	left: 0em;
+	top: 4em;
+	background: #FA8B60 ;
+}
+.i .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 4em;
+	height: 1em;
+	left: 0em;
+	background: #FA8B60;
+}
+/* LETTER J
+-------------------------------------------------------- */
+.j {
+	width: 4em;
+	height: 5em;
+}
+.j .bottom, .j .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.j .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.j .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 1em;
+	left: 0;
+	bottom: 0;
+	border-top: 0em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.j .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+	right: 0;
+	border-top: 0em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* LETTER K
+-------------------------------------------------------- */
+.k {
+	width: 4em;
+	height: 5em;
+}
+.k .bottom, .k .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.k .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.k .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 1em;
+	right: 0;
+	border-top: 0em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.k .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 5em;
+	background: #FA8B60;
+}
+.k .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 2em;
+	right: 0;
+	bottom: 0;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+/* LETTER L
+-------------------------------------------------------- */
+.l {
+	width: 4em;
+	height: 5em;
+}
+.l .bottom {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.l .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60 1em);
+}
+.l .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+	border-top: 0em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* LETTER M
+-------------------------------------------------------- */
+.m {
+	width: 5em;
+	height: 5em;
+}
+.m .bottom, .m .top {
+	display: block;
+	width: 5em;
+	height: 100%;
+	position: absolute;
+}
+.m .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 4em;
+	left: 2em;
+	top: 1em;
+	background: #FA8B60 -webkit-linear-gradient( top, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to bottom, #A45B3F, #FA8B60 1em);
+}
+.m .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.m .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+	/* variant
+	width: 1em;
+	height: 5em;
+	border: none;
+	background: #FA8B60 ;
+	*/
+}
+.m .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+	right: 0;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+/* SECOND LETTER M
+-------------------------------------------------------- */
+.m2 {
+	width: 5em;
+	height: 5em;
+}
+.m2 .bottom, .m2 .top, .m2 .middle, .m2 .split, .m2 .extra{
+	display: block;
+	width: 5em;
+	height: 100%;
+	position: absolute;
+}
+.m2 .extra{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	left: 3em;
+	background: #FA8B60 -webkit-linear-gradient( to left, #A45B3F, #FA8B60);
+	background: #FA8B60 linear-gradient( to left, #A45B3F, #FA8B60);
+}
+.m2 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	left: 2em;
+	top: 1em;
+	background: #FA8B60 -webkit-linear-gradient( top, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to bottom, #A45B3F, #FA8B60 1em);
+}
+.m2 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( to right, #A45B3F, #FA8B60);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60);
+}
+.m2 .split:before{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	left: 2em;
+	top: 0em;
+	border-left: 1em solid #FA8B60;
+	border-top: 1em solid transparent;
+}
+.m2 .split:after{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 0em;
+	left: 1em;
+	border-right: 1em solid #FA8B60;
+	border-top: 1em solid transparent;
+}
+.m2 .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 1em;
+	left: 2em;
+	top: 2em;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.m2 .middle:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 1em;
+	right: 0;
+	left: 2em;
+	top: 2em;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.m2 .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 4em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+.m2 .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 4em;
+	right: 0;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+/* LETTER N
+-------------------------------------------------------- */
+.n {
+	width: 4em;
+	height: 5em;
+}
+.n .bottom, .n .top {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.n .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.n .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+	/* variant
+	width: 1em;
+	height: 5em;
+	border: none;
+	background: #FA8B60 ;
+	*/
+}
+.n .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+	right: 0;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+/* LETTER O
+-------------------------------------------------------- */
+.o {
+	width: 4em;
+	height: 5em;
+}
+.o .bottom, .o .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.o .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.o .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 4em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.o .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 3em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.o .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0em;
+	width: 0em;
+	height: 3em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* LETTER P
+-------------------------------------------------------- */
+.p {
+	width: 4em;
+	height: 5em;
+}
+.p .bottom, .p .top {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.p .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.p .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	top: 2em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.p .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 5em;
+	left: 0em;
+	background: #FA8B60;
+}
+.p .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0em;
+	width: 0em;
+	height: 1em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* LETTER Q
+-------------------------------------------------------- */
+.q {
+	width: 4em;
+	height: 5em;
+}
+.q .bottom, .q .middle, .q .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.q .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 3em;
+	top: 1em;
+	background: #FA8B60 -webkit-linear-gradient( bottom, #A45B3F, #FA8B60 1em, #FA8B60 2em, #A45B3F );
+	background: #FA8B60 linear-gradient( to top, #A45B3F, #FA8B60 1em, #FA8B60 2em, #A45B3F );
+}
+.q .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 3em;
+	top: 1em;
+	right: 0em;
+	background: #FA8B60 -webkit-linear-gradient( top, #A45B3F, #FA8B60 1em );
+	background: #FA8B60 linear-gradient( to bottom, #A45B3F, #FA8B60 1em );
+}
+.q .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 0em;
+	border-bottom: 1em solid #FA8B60;
+	border-left: 1em solid transparent;
+	border-right: 1em solid transparent;
+}
+
+.q .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3em;
+	height: 1em;
+	bottom: 0;
+	background: #FA8B60;
+	-webkit-transform: skew(45deg) translateX(0.5em);
+	        transform: skew(45deg) translateX(0.5em);
+}
+
+.q .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 0.5em;
+	right: 0;
+	bottom: -0.5em;
+	background: #FA8B60 -webkit-linear-gradient( top, #A45B3F, #FA8B60 1em );
+	background: #FA8B60 linear-gradient( to bottom, #A45B3F, #FA8B60 1em );
+
+}
+
+/* LETTER R
+-------------------------------------------------------- */
+.r {
+	width: 4em;
+	height: 5em;
+}
+.r .bottom, .r .middle, .r .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.r .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.r .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.r .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0em;
+	width: 0em;
+	height: 1em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.r .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 5em;
+	background: #FA8B60;
+
+}
+.r .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0em;
+	width: 0em;
+	height: 1em;
+	bottom: 0;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+/* LETTER S
+-------------------------------------------------------- */
+.s {
+	width: 4em;
+	height: 5em;
+}
+.s .bottom, .s .middle, .s .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.s .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3em;
+	height: 1em;
+	left: 1em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60 1em);
+}
+.s .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.s .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3em;
+	height: 1em;
+	left: 0em;
+	bottom: 0;
+	background: #FA8B60 -webkit-linear-gradient( right, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to left, #A45B3F, #FA8B60 1em);
+}
+.s .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 1em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.s .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 1em;
+	right: 0;
+	bottom: 0;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* LETTER T
+-------------------------------------------------------- */
+.t {
+	width: 4em;
+	height: 5em;
+}
+.t .bottom {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.t .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 4em;
+	top: 1em;
+	left: 1.5em;
+	background: #FA8B60 -webkit-linear-gradient( bottom, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to top, #FA8B60, #A45B3F);
+	background: #FA8B60 -webkit-linear-gradient(bottom, #FA8B60 3em, #A45B3F );
+	background: #FA8B60 linear-gradient(to top, #FA8B60 3em, #A45B3F );
+}
+.t .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 4em;
+	height: 1em;
+	left: 0em;
+	background: #FA8B60;
+}
+/* SECOND LETTER T
+-------------------------------------------------------- */
+.t2 {
+	width: 4em;
+	height: 5em;
+}
+.t2 .bottom, .t2 .left, .t2 .right, .t2 .extra {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.t2 .left:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	left: -1.5em;
+	border-bottom: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+.t2 .left:after {
+	content: "";
+	position: absolute;
+	display: block;
+	left: -0.5em;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+}
+.t2 .right:before {
+	content: "";
+	position: absolute;
+	display: block;
+	left: 3.5em;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+}
+.t2 .right:after {
+	content: "";
+	position: absolute;
+	display: block;
+	left: 3.5em;
+	border-bottom: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+}
+.t2 .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 4em;
+	top: 1em;
+	left: 1.5em;
+	background: #FA8B60 -webkit-linear-gradient( bottom, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to top, #FA8B60, #A45B3F);
+	background: #FA8B60 -webkit-linear-gradient(bottom, #FA8B60 3em, #A45B3F );
+	background: #FA8B60 linear-gradient(to top, #FA8B60 3em, #A45B3F );
+}
+.t2 .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	left: 1.5em;
+	border-left: 1em solid #FA8B60;
+	border-top: 1em solid transparent;
+}
+.t2 .extra:before{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	left: .5em;
+	background: #fa8b60;
+}
+.t2 .extra:after{
+	content: "";
+	position: absolute;
+	display: block;
+	left: 1.5em;
+	border-right: 1em solid #FA8B60;
+	border-top: 1em solid transparent;
+}
+.t2 .extra2:before{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 1em;
+	left: 3em;
+	background: #fa8b60;
+}
+/* LETTER U
+-------------------------------------------------------- */
+.u {
+	width: 4em;
+	height: 5em;
+}
+.u .bottom, .u .top {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.u .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	bottom: 0;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.u .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+	border-top: 0em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.u .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+	right: 0;
+	border-top: 0em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* LETTER V
+-------------------------------------------------------- */
+.v {
+	width: 4em;
+	height: 5em;
+}
+.v .bottom, .v .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.v .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 5em;
+	right: 0.8em;
+	background: #FA8B60 -webkit-linear-gradient( bottom, #A45B3F, #FA8B60);
+	background: #FA8B60 linear-gradient( to top, #A45B3F, #FA8B60);
+	-webkit-transform: skew(-16deg);
+	        transform: skew(-16deg);
+}
+.v .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 5em;
+	left: 0.8em;
+	background: #FA8B60;
+	-webkit-transform: skew(16deg);
+	        transform: skew(16deg);
+}
+/* LETTER W
+-------------------------------------------------------- */
+.w {
+	width: 5em;
+	height: 5em;
+}
+.w .bottom, .w .top {
+	display: block;
+	width: 5em;
+	height: 100%;
+	position: absolute;
+}
+.w .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 3em;
+	left: 2em;
+	bottom: 1em;
+	background: #FA8B60 -webkit-linear-gradient( bottom, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to top, #A45B3F, #FA8B60 1em);
+}
+.w .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3em;
+	height: 1em;
+	left: 1em;
+	bottom: 0;
+	background: #FA8B60 -webkit-linear-gradient( left, #A45B3F, #FA8B60, #A45B3F);
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.w .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+	border-top: 0em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.w .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 4em;
+	right: 0;
+	border-top: 0em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+/* LETTER X
+-------------------------------------------------------- */
+.x {
+	width: 4em;
+	height: 5em;
+}
+.x .bottom, .x .middle, .x .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.x .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 5em;
+	left: 2em;
+	left: 1.5em;
+	background: #FA8B60 -webkit-linear-gradient( bottom, #FA8B60 1em, #A45B3F 2em, #A45B3F 3em, #FA8B60 4em);
+	background: #FA8B60 linear-gradient( to top, #FA8B60 1em, #A45B3F 2em, #A45B3F 3em, #FA8B60 4em);
+	-webkit-transform: skew(31deg);
+	        transform: skew(31deg);
+
+background: #FA8B60 -webkit-linear-gradient( bottom, #FA8B60 0em, #A45B3F 2em, #A45B3F 3em, #FA8B60 5em);
+
+background: #FA8B60 linear-gradient( to top, #FA8B60 0em, #A45B3F 2em, #A45B3F 3em, #FA8B60 5em);
+-webkit-transform: skew(29deg);
+        transform: skew(29deg);
+width: 1.25em;
+left: 1.4em;
+}
+.x .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 5em;
+	left: 2em;
+	left: 1.5em;
+	background: #FA8B60;
+	-webkit-transform: skew(-31deg);
+	        transform: skew(-31deg);
+
+-webkit-transform: skew(-29deg);
+
+        transform: skew(-29deg);
+width: 1.25em;
+left: 1.4em;
+}
+/*
+.x .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 1em;
+	left: 1em;
+	top: 2em;
+	background: #FA8B60 linear-gradient( to right, #A45B3F, #FA8B60, #A45B3F);
+}
+.x .middle:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 1em;
+	bottom: 0;
+	border-top: 1em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+.x .middle:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 1em;
+	right: 0;
+	border-top: 0em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.x .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 2em;
+	border-top: 0em solid transparent;
+	border-right: 1em solid #FA8B60;
+	border-bottom: 1em solid transparent;
+}
+.x .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0em;
+	height: 2em;
+	right: 0;
+	bottom: 0;
+	border-top: 1em solid transparent;
+	border-left: 1em solid #FA8B60;
+	border-bottom: 0em solid transparent;
+}
+*/
+/* LETTER Y
+-------------------------------------------------------- */
+.y {
+	width: 4em;
+	height: 5em;
+}
+.y .bottom, .y .top {
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.y .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 2em;
+	background: #FA8B60 -webkit-linear-gradient( bottom, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to top, #A45B3F, #FA8B60 1em);
+}
+.y .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 2em;
+	right: 0;
+	background: #FA8B60 -webkit-linear-gradient( bottom, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to top, #A45B3F, #FA8B60 1em);
+}
+.y .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 1em;
+	height: 2em;
+	left: 1.5em;
+	bottom: 0em;
+	background: #FA8B60 -webkit-linear-gradient( top, #A45B3F, #FA8B60 1em);
+	background: #FA8B60 linear-gradient( to bottom, #A45B3F, #FA8B60 1em);
+}
+.y .top:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 2em;
+	height: 0em;
+	top: 2em;
+	left: 0em;
+	border-top: 1em solid #FA8B60;
+	border-left: 1em solid transparent;
+	border-right: 1em solid transparent;
+}
+/* LETTER Z
+-------------------------------------------------------- */
+.z {
+	width: 4em;
+	height: 5em;
+}
+.z .bottom, .z .middle, .z .top{
+	display: block;
+	width: 4em;
+	height: 100%;
+	position: absolute;
+}
+.z .bottom:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3.3em;
+	height: 1em;
+	background: #FA8B60 -webkit-linear-gradient(right, #A45B3F 0.5em, #FA8B60 2em);
+	background: #FA8B60 linear-gradient(to left, #A45B3F 0.5em, #FA8B60 2em);
+}
+.z .bottom:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 3.3em;
+	height: 1em;
+	bottom: 0px;
+	right: 0px;
+	background: #FA8B60 -webkit-linear-gradient(left, #A45B3F 0.5em, #FA8B60 2em);
+	background: #FA8B60 linear-gradient(to right, #A45B3F 0.5em, #FA8B60 2em);
+}
+.z .top:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 5em;
+	width: 1.2em;
+	left: 1.4em;
+	background: #FA8B60;
+	-webkit-transform: skew(-29deg);
+	        transform: skew(-29deg);
+}

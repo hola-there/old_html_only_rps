@@ -1,0 +1,961 @@
+@font-face{
+    font-family: "airBag";
+    src: url("/fonts/Airbag-Commercial/Airbag-Regular.ttf");
+}
+
+@font-face{
+    font-family: "bariolBold";
+    src: url("/fonts/Bariol_Webfont_Italics/Bariol%20Bold%20Italic%20Webfont/Bariol_Bold_Italic_Webfont/bariol_bold_italic-webfont.ttf");
+}
+
+@font-face{
+    font-family: "comfortaa";
+    src: url("/fonts/comfortaa/Comfortaa-Regular.ttf");
+}
+
+@font-face{
+    font-family: "quickSand";
+    src: url("/fonts/quicksand/Quicksand-Regular.otf");
+}
+
+@font-face{
+	font-family: "quickSandDash";
+	src: url("/fonts/quicksand/Quicksand_Dash.otf");
+}
+
+@font-face{
+	font-family:'zurb-logo';
+	src:url(/fonts/zurb-webfont-123254ee91672b6b508e2e5a86e21e1c.eot);
+	src:url(/fonts/zurb-webfont-123254ee91672b6b508e2e5a86e21e1c.eot?#iefix) format("embedded-opentype"),
+		url(/fonts/zurb-webfont-ed8c6b373b64d93d24a0f87c5b69d4b0.woff) format("woff"),
+		url(/fonts/zurb-webfont-c92f373b4c314ee1ac915e78edf87677.ttf) format("truetype");
+	font-weight:normal;
+	font-style:normal;
+}
+
+@font-face{
+	font-family: "Medium-65";
+	src:url("/fonts/Medium-65.a93e96be336c.woff");
+	font-weight:300;
+	font-style:normal;
+}
+
+#content {
+	font-family: "quickSand";
+    text-align: center;
+	margin: auto;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, input[type="ip"]:focus, .uneditable-input:focus {   
+    border-color: grey;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px grey;
+    outline: 0 none;
+}
+
+/* Game Modal */
+
+#gameModal::-webkit-scrollbar {
+	width: 0 !important;
+}
+
+#gameModal .modal-dialog{
+	width: 80%;
+	max-width: 960px;
+	min-height: 3.750em; 
+	margin: 2em auto;
+	padding: 1.250em;
+	line-height: 1.5em;
+	color: #292929;
+	font-size:1em;
+}
+
+#gameModal .modal-header{
+	margin-bottom: -3em;
+}
+#gameModal .modal-header .right{
+	position: absolute;
+	width: 11em;
+	height: 3em;
+	left: 58.891em;
+	top: 1.1em;
+	z-index: 0;
+	border-top: 3em solid rgb(123, 159, 199);
+	border-right: 3.26em solid transparent;
+	border-bottom: 3em solid rgb(123, 159, 199);
+	box-shadow: -3px 3px 3px 0px rgba(0,0,0,0.5);
+}
+#gameModal .modal-header .ribbon p{
+	font-size: 2.6em;
+	padding-bottom: .15em;
+	margin: auto;
+	width: 300%;
+	text-align: center;
+	margin-left: -1.5em;
+}
+#gameModal .modal-header .close{
+	display: inline-block;
+	margin: -3.65em 1em auto auto;
+}
+#gameModal .modal-header .close span{
+	font-size: 2.5em;
+}
+
+#gameModal .ribbon{
+	position: relative;
+	padding: 0 12em;
+	font-size: 2em;
+	margin: 0 3em 0em -0.625em;
+	line-height: 2.678em;
+	z-index: 5;
+	color: snow;
+	background: rgb(123, 159, 199);
+	box-shadow: -1.99px 3px 3px rgba(0,0,0,0.5);
+}
+#gameModal .ribbon:before, #gameModal .ribbon:after{
+	position:absolute;
+	content: '';
+	display: block;
+}
+#gameModal .ribbon:before{
+	width: 0.469em;
+	height: 120%;
+	padding: 0 0 0.438em;
+	left: -0.39em;
+	background: inherit;
+	border-radius: 0.313em 0 0 0.313em;
+}
+#gameModal .ribbon:after{
+	width: 0.313em;
+	height: 0.513em;
+	background: rgba(0,0,0,0.35);
+	bottom: -0.5em;
+	left: -0.23em;
+	border-radius: 0.313em 0 0 0.313em;
+	box-shadow: inset -1px 2px 2px rgba(0,0,0,0.3);
+}
+
+#gameModal .modal-body{
+	z-index: 1;
+	margin: 2%;
+}
+
+#gameModal #ribbonRow{
+	height: 2.9em;
+}
+
+#gameModal .modal-body #ribbonRow .col-md-6{
+	display: none;
+}
+
+#gameModal #ribbonRow .wrapper {
+	text-align: center;
+	position: relative;
+	margin: auto;
+	width: 73%;
+	z-index: 5;
+}
+
+#gameModal #ribbonRow .littleRibbon {
+	margin: -.9% auto auto auto;
+	background-color: #FA8B60;
+	width: 50%;
+	z-index: 6;
+	padding: 0.45em;
+	font-size: 1.7em;
+	font-family: comfortaa;
+}
+#gameModal #ribbonRow .littleRibbon:before {
+	content: "";
+	position: absolute;
+	border-left: .7em solid transparent;
+	border-top: .7em solid #96533a;
+	left: 2.89em;
+	top: 1.76em;
+	width: .5em;
+	z-index: -1;
+}
+#gameModal #ribbonRow .littleRibbon:after {
+	content: "";
+	position: absolute;
+	border-right: .7em solid transparent;
+	border-top: .7em solid #96533a;
+	left: 8.14em;
+	top: 1.76em;
+	width: .5em;
+	z-index: -1;
+}
+
+#gameModal #ribbonRow .left:before{
+	content: "";
+	position: absolute;
+	border-left: 1.5em solid transparent;
+	border-bottom: 1.5em solid #c86f4d;
+	left: 3.16em;
+	top: 2.65em;
+	width: 2.91em;
+	height: 1.5em;
+	z-index: -1;
+}
+#gameModal #ribbonRow .left:after{
+	content: "";
+	position: absolute;
+	border-left: 1.5em solid transparent;
+	border-top: 1.5em solid #c86f4d;
+	left: 3.19em;
+	top: 1.25em;
+	width: 2.91em;
+	height: 1.5em;
+	z-index: -1;
+}
+
+#gameModal #ribbonRow .right:before{
+	content: "";
+	position: absolute;
+	border-right: 1.5em solid transparent;
+	border-bottom: 1.5em solid #c86f4d;
+	left: 13.85em;
+	top: 2.65em;
+	width: 2.91em;
+	height: 1.5em;
+	z-index: -1;
+}
+#gameModal #ribbonRow .right:after{
+	content: "";
+	position: absolute;
+	border-right: 1.5em solid transparent;
+	border-top: 1.5em solid #c86f4d;
+	left: 13.85em;
+	top: 1.25em;
+	width: 2.91em;
+	height: 1.5em;
+	z-index: -1;
+}
+
+#gameModal .modal-body .playArea{
+	width: 50%;
+	text-align: center;
+}
+#gameModal .modal-body .rpsHand{
+	height: 12em;
+}
+#gameModal .modal-body #playerLeft{
+	float: left;
+}
+#gameModal .modal-body #playerLeft #leftHand{
+	transform: rotate(84deg);
+}
+#gameModal .modal-body #playerRight{
+	float: right;
+}
+#gameModal .modal-body #playerRight #rightHand{
+	transform: scaleX(-1) rotate(84deg);
+}
+#gameModal .modal-body #vs{
+	position: relative;
+	top: -12em;
+}
+#gameModal .modal-body #nameRow{
+	margin-top: -23%;
+	margin-bottom: 18%;
+	font-family:  "comfortaa";
+}
+#gameModal .modal-body #lastRow{
+	margin: -10em auto 1em auto;
+}
+#gameModal .modal-body #leftButtonGroup{
+	float: left;
+	width: 50%;
+}
+#gameModal .modal-body #leftButtonGroup .rock{
+	height: 9em;
+	width: 9em;
+	position: relative;
+	top: 1em;
+}
+#gameModal .modal-body #leftButtonGroup .paper{
+	height: 9em;
+	width: 9em;
+	position: relative;
+	top: 1em;
+}
+#gameModal .modal-body #leftButtonGroup .scissors{
+	height: 9em;
+	width: 9em;
+	position: relative;
+	top: 1em;
+}
+#gameModal .modal-body .optionHand{
+	margin: 2% 4%;
+	display: inline-block;
+	padding: 6px 12px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #333;
+	background-color: #fff;
+	border-color: #ccc;
+}
+#gameModal .modal-body #rightButtonGroup{
+	float: right;
+	width: 50%;
+}
+#gameModal .modal-body #rightButtonGroup .rock{
+	height: 9em;
+	width: 9em;
+	position: relative;
+	top: 1em;
+}
+#gameModal .modal-body #rightButtonGroup .paper{
+	height: 9em;
+	width: 9em;
+	position: relative;
+	top: 1em;
+}
+#gameModal .modal-body #rightButtonGroup .scissors{
+	height: 9em;
+	width: 9em;
+	position: relative;
+	top: 1em;
+}
+
+#gameModal .modal-body #nextRow{
+	display: none;
+}
+
+@media (max-width: 600px) {
+
+	#gameModal .modal-body{
+		font-size:0.875em;
+	}
+
+	#gameModal .ribbon{
+		line-height: 1.143em;
+		padding: 0.5em;
+	}
+
+	#gameModal .ribbon:before, #gameModal .ribbon:after{
+		font-size: 0.714em;
+	}
+
+}
+
+/*Modals*/
+
+#rExtraModal .modal-body table thead th{
+	text-align: center;
+}
+
+.modal{
+	text-align: center;
+}
+
+.modal .modal-footer .btn{
+	margin: auto;
+}
+
+.panel-heading a{
+	text-decoration: none;
+}
+
+.panel-title .settings{
+	font-size: 18px;
+}
+
+#otherMatch {
+	display: none;
+}
+
+#otherMatch .form-control {
+	display: inline;
+	width: 85%;
+}
+
+#otherMatch .input-group-addon{
+	padding-top: 9px;
+	padding-bottom: 9px;
+}
+
+.row{
+	margin: 2%;
+}
+
+.colorName{
+	display: inline;
+	margin: auto 1% auto auto;
+}
+
+.square{
+	border-radius: 5px;
+	border: 4px solid #ddd;
+	display: inline-block;
+	height: 50px;
+	margin: auto 1%;
+	vertical-align: middle;
+	width: 50px;
+}
+
+.square1{
+	background-color: royalblue;
+}
+
+.square2{
+	background-color: papayawhip;
+}
+
+.square3{
+	background-color: saddlebrown;
+}
+
+.square p{
+	margin-top: -50%;
+}
+
+.square .colorSpecial{
+	margin-top: auto;
+}
+
+#switchModal .modal-body .input-group-btn .btn{
+	margin-top: -.1%;
+	z-index: 1;
+}
+
+#collapseThree .panel-body #player1Colors #row1, #collapseThree .panel-body #player2Colors #row2, #collapseThree .panel-body #computerColors #row3{
+	display: none;
+}
+
+#changeColorBtn1, #changeColorBtn2, #changeColorBtn3{
+	margin-top: 2%;
+}
+
+#collapseFour .row div:first-child{
+	vertical-align: middle;
+	margin-top: 5%;
+	margin-bottom: auto;
+}
+
+#collapseFour a{
+	display: block;
+	margin: 4%;
+	font-size: 45px;
+}
+
+#collapseFour #mainArea button{
+	border-radius: 5px;
+	margin: 4%;
+	display: inline-block;
+	width: 40%;
+}
+
+#collapseFour #changeColorArea{
+	display: none;
+}
+
+/* Above The Well */
+
+#title{
+    font-family: "airBag";
+    font-size: 50px;
+}
+
+.description{
+    font-family: "bariolBold";
+    font-size: 20px;
+}
+
+.titleBtn{
+	box-shadow: 0 4px 0 0 #333333;
+	font-family: "comfortaa";
+	font-size: 14px;
+	margin-bottom: 2%; 
+    margin-top: 2%;     
+    max-width: 45%;
+    max-height: 15%;
+}
+
+.titleBtn:active {
+	bottom: -4px;
+    box-shadow: none;
+    position: relative;
+	top: 4px;
+}
+
+.btn{
+	margin: .5%;
+}
+
+.btn-group > .btn{
+	font-family: "comfortaa";
+	font-size: 14px;
+	margin: 2% 0 2% 0;
+}
+
+#reset{
+    display: block;
+    margin: auto;
+    width: 20%;
+}
+
+.playIcon{
+	height: 80%;
+	vertical-align: middle;
+    width: 20%;
+}
+
+#cBtn{
+	display: none;
+	opacity: 0;
+}
+
+/* The Well... */
+
+.insert{
+	border-bottom: 1px solid black;
+	margin: 1.5%;
+}
+
+.well{
+	margin: 1% auto;
+	text-align: center;
+	width: 90%;
+}
+
+.miniRound{
+	display: inline-block;
+	width: 26%;
+	border: 1.5px solid grey;
+	border-radius: 1em;
+	margin: 1% 2%;
+	padding-bottom: 1%;
+}
+
+.popover-title{
+	background-color: #eeeeee;
+}
+
+.moreInfo{
+	color: black;
+	font-size: 20px;
+	font-family: "comfortaa";
+	text-align: center;
+	text-decoration: none;
+}
+
+.moreInfo:hover{
+	text-decoration: none;
+	cursor: pointer;
+	color: #707070;
+}
+
+.downArrow{
+	display: block;
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	transform: rotate(180deg);
+	margin-top: 0;
+}
+
+.arrow-down2 {
+	width: 0; 
+	height: 0; 
+	margin: 0;
+	margin-top: -2.4%;
+	margin-right: auto;
+	margin-left: auto;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #f5f5f5;
+	z-index: 2000;
+}
+
+.hiddenWellSection{
+	border-radius: 4px;
+	background-color: #cccccc;
+	box-shadow: inset 0px 0px 15px black;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3%;
+	z-index: 2;
+	display: none;
+	text-align: center;
+}
+
+#example{
+    width: 100%;
+}
+
+#left3{
+	cursor: help;
+}
+
+#right3{
+	cursor: help;
+}
+
+#leftExample9{
+	width: 100%;
+	text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.iconExample{
+    width: 20%;
+    height: 20%;
+    text-align: center;
+    vertical-align: middle;
+    display:      inline;
+    background-color: white;
+    border-radius: 10%;
+    margin: 1% 1% 1% 1%;
+    box-shadow: 4px 4px 15px black;
+    border: solid #ccc 1px;
+}
+
+.iconExample:hover{
+    background-color: #d1d1d1;
+    cursor: pointer;
+}
+
+.yesNo{
+    width: 10%;
+	text-align: center;
+    vertical-align: middle;
+	display: inline;
+    background-color: white;
+    border-radius: 10%;
+    margin: 1% 1% 1% 1%;
+    box-shadow: 4px 4px 15px black;
+    border: solid #ccc 1px;
+	font-size: 20px;
+}
+
+.yesNo:hover{
+	background-color: #d1d1d1;
+	cursor: pointer;
+}
+
+.roundHolder{
+	margin: auto;
+	text-align: center;
+	display: block;
+}
+
+.roundHolder .btn{
+	font-size: 2em;
+	font-weight: bold;
+	padding: 10px 51.4px;
+}
+
+#round1{
+	margin: auto 0 auto auto;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#rounds2{
+	margin: auto 0 auto 0;
+	border-radius: 0;
+}
+
+#rounds3{
+	margin: auto 0 auto auto;
+	border-radius: 0;
+}
+
+#rounds4{
+	margin: auto .5% auto 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+#rounds5{
+	margin: auto 0 auto 1%;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#rounds6{
+	margin: auto 0 auto 0;
+	border-radius: 0;
+}
+
+#rounds7{
+	margin: auto 1% auto 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+#infin{
+	padding: 10px 12px;
+}
+
+#other{
+	margin: auto auto auto 1%;
+	padding: 10px 20px;
+}
+
+.clock{
+	width: 30%;
+}
+
+/* Below the Well*/
+#scrollToTop{
+	height:50px;
+	padding:8px; 
+	text-align: center;
+	font-weight: bold;
+	position:fixed;
+	top: 50%;
+	right:40px;
+	display:none;
+	box-shadow: 0 1% 0 0 #333333;
+	font-family: "comfortaa";
+	font-size: 14px;
+}
+
+#scrollToTop:active {
+	box-shadow: none;
+	top: 50.5%;
+}
+
+/* Stats Arena */
+
+.customPanel{
+    font-family: "comfortaa";
+    width: 80%;
+    margin: 2% auto 3% auto;
+}
+
+.customPanel h3{
+    padding-bottom: .2%;
+}
+
+.panel-heading{
+    cursor: pointer;
+}
+.panel-body{
+    width:100%;
+}
+
+#stats table{
+    overflow-x:auto;
+    overflow-y:auto;
+}
+
+#stats table th{
+    text-align: center;
+}
+
+#stats table th:nth-child(2){
+	color: #5cb85c;
+}
+#stats table th:nth-child(3){
+	color: #f0ad4e;
+}
+#stats table th:nth-child(4){
+	color: #d9534f;
+}
+
+.table td{
+    border-bottom: 1px solid #ddd;
+}
+
+.table .dataName{
+    vertical-align: middle;
+    border-right: 1px solid #ddd;
+}
+
+.table .progress{
+    margin: auto;
+}
+
+.progress-bar{
+	min-width: 2em;
+}
+
+.usage{
+    width: 100%;
+    margin: 1% auto 3% auto;
+}
+
+.usage h4{
+    padding-bottom: .2%;
+    border-bottom: 1px solid black;
+    width: 85%;
+    margin: auto;
+    text-align: center;
+}
+
+.thrown{
+    display: inline-block;
+    width: 32.5%;
+}
+
+.thrown text{
+    clip: auto;
+    z-index: 2000;
+    padding: 2%;
+}
+
+.stats ul, .usage ul {
+    display: inline;
+    z-index: 200;
+}
+
+.stats ul li, .usage ul li{
+    display: inline-block;
+    font-size: 20px;
+}
+
+/* Coming Soon */
+#coming .panel-heading h3{
+	font-family: "quickSandDash";
+	font-size: 4.4em;
+}
+
+#coming .cPics {
+	width: 30%;
+}
+
+#coming .icon{
+	font-size: 4em;
+}
+
+#coming .icon2{
+	font-size: 2.2em;
+}
+
+#coming h6{
+	font-size: 1.35em;
+}
+
+#coming p{
+	font-size: 1em;
+}
+
+#coming .panel-body .row .col-md-4:nth-child(4){
+	margin-top: -1.29%;
+}
+
+#coming hr {
+	margin: 4em auto auto auto;
+	width: 83%;
+	border-top: 1px solid #333333;
+}
+
+/* Below the Stats Arena */
+
+.credits{
+    color: black;
+    font-size: 20px;
+    font-family: "comfortaa";
+	text-align: center;
+}
+
+#nounSvg{
+	height: 40px;
+	padding-bottom: .26%;
+}
+
+.ui_logo{
+	color: black;
+	font-size: 26px;
+	font-family: "Medium-65";
+}
+
+li .ui_logo:hover{
+	text-decoration: none;
+	color: black;
+}
+
+li #pieChartCredits{
+	font-size: 2em;
+	color: black;
+	text-decoration: none;
+}
+li #pieChartCredits:hover{
+	text-decoration: none;
+}
+
+li .paulund{
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	color: black;
+	text-decoration: none;
+}
+
+li .pauland:hover{
+	text-decoration: none;
+}
+
+li .Craig{
+	font-size: 20px;
+	color: black;
+	text-decoration: none;
+}
+
+li .Craig:hover{
+	text-decoration: none;
+}
+
+.creditSection h4{
+	text-align: center;
+}
+
+.credits:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: #707070;
+}
+
+.arrow-down {
+	width: 0; 
+	height: 0; 
+	margin: 0;
+	margin-top: -2.4%;
+	margin-right: auto;
+	margin-left: auto;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #e9efec;
+	z-index: 2000;
+}
+
+.hiddenSection{
+    border-radius: 4px;
+    width: 90%;
+	background-color: #cccccc;
+    box-shadow: inset 0px 0px 15px black;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    z-index: 2;
+    display: none;
+	text-align: center;
+}
+
+.hiddenSection ul{
+    width: auto;
+}
+
+.hiddenSection ul li{
+	list-style: none;
+	margin: .5%;
+}
