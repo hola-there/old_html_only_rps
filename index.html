@@ -1,456 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="Play with the computer or locally with a friend! Solve arguments;) Have Fun!">
-		<meta name="author" content="Ola Bamisaiye">
-		<title>Rock, Paper, Scissors 2.0?</title>
-		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'/>
-		<link rel="shortcut icon" href="../img/RPS%202.0%20Icon%20Image.jpg"/>
-		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="../css/normalize.css"/>
-		<link rel="stylesheet" href="../css/ribbonStyle.css"/>
-		<link rel="stylesheet" href="../fonts/font-awesome-4.5.0/css/font-awesome.min.css"/>
-		<link rel="stylesheet" href="../css/style.css"/>
-		<link rel="stylesheet" href="../css/chart.css"/>
-		<link rel="stylesheet" href="../css/flipclock.css"/>
-		<!--[if IE]>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Play with the computer or locally with a friend! Solve arguments;) Have Fun!">
+	<meta name="author" content="Ola Bamisaiye">
+	<title>Rock, Paper, Scissors 2.0?</title>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css' />
+	<link rel="shortcut icon" href="./img/RPS%202.0%20Icon%20Image.jpg" />
+	<link rel="stylesheet" href="./css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./css/normalize.css" />
+	<link rel="stylesheet" href="./css/ribbonStyle.css" />
+	<link rel="stylesheet" href="./fonts/font-awesome-4.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./css/chart.css" />
+	<link rel="stylesheet" href="./css/flipclock.css" />
+	<!--[if IE]>
 			<script src="/js/html5shiv.min.js"></script>
 			<script src="/js/respond.min.js"></script>
 		<![endif]-->
-	</head>
-	<body>
-		<div class="modal fade" tabindex="-1" role="dialog" id="switchModal" aria-labelledby="mySwitchingModalLabel">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Modal title</h4>
-					</div>
-					<div class="modal-body">
-						<p>One fine body&hellip;</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-success">Save changes</button>
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-		<!--Random Extra Modal -->
-		<div class="modal fade" tabindex="-1" role="dialog" id="rExtraModal" aria-labelledby="myExtraModalLabel">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Modal title</h4>
-					</div>
-					<div class="modal-body">
-						<p>One fine body&hellip;</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-success">Save changes</button>
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-		<!-- Game Modal -->
-		<div class="modal fade" tabindex="-1" role="dialog" id="gameModal" aria-labelledby="myGameModalLabel">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Modal title</h4>
-					</div>
-					<div class="modal-body">
-						<p>One fine body&hellip;</p>
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-		
-		<div id="content">
-			<h1 id="title">Rock, Paper, Scissors 2.0?<br/><small class="description">Play against the computer or with a friend!</small></h1>
-			<a class="btn btn-default titleBtn" data-toggle="tooltip" data-placement="bottom" title="Click or Tap this to Play!" onclick="start()" role="button" id="start"><svg class="playIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewbox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M66.999,45.71c-0.941,0-1.829,0.222-2.625,0.606c-0.653-2.641-3.036-4.606-5.875-4.606c-1.214,0-2.343,0.362-3.292,0.979  c-1.056-1.78-2.992-2.979-5.208-2.979c-0.869,0-1.694,0.188-2.442,0.519V29.34c0-3.34-2.718-6.058-6.058-6.058  S35.441,26,35.441,29.34v20.293c-5.254,3.246-8.25,7.986-8.25,13.135c0,12.646,10.288,22.933,22.933,22.933  s22.933-10.287,22.933-22.933v-11C73.057,48.427,70.34,45.71,66.999,45.71z M69.441,62.768c0,10.651-8.666,19.317-19.317,19.317  s-19.317-8.666-19.317-19.317c0-3.225,1.66-6.288,4.634-8.711v5.461c0,0.998,0.81,1.808,1.808,1.808s1.808-0.81,1.808-1.808V29.34  c0-1.347,1.095-2.441,2.442-2.441s2.442,1.095,2.442,2.441v30.178c0,0.998,0.81,1.808,1.808,1.808s1.808-0.81,1.808-1.808v-13.75  c0-1.347,1.095-2.442,2.442-2.442s2.442,1.096,2.442,2.442c0,0.007,0.002,0.013,0.002,0.02v13.73c0,0.998,0.809,1.808,1.808,1.808  s1.808-0.81,1.808-1.808v-11.75c0-1.347,1.096-2.442,2.44-2.442c1.347,0,2.442,1.096,2.442,2.442v11.75  c0,0.998,0.809,1.808,1.808,1.808s1.808-0.81,1.808-1.808v-7.75c0-1.347,1.096-2.442,2.442-2.442s2.442,1.096,2.442,2.442V62.768z   M31.422,38.46c0.387,0,0.777-0.123,1.107-0.379c0.789-0.612,0.932-1.748,0.32-2.537c-1.498-1.931-2.29-4.243-2.29-6.687  c0-6.033,4.908-10.941,10.941-10.941s10.941,4.908,10.941,10.941c0,1.93-0.513,3.828-1.482,5.49  c-0.502,0.863-0.211,1.97,0.652,2.473c0.861,0.502,1.969,0.213,2.473-0.65c1.291-2.215,1.973-4.743,1.973-7.313  c0-8.027-6.53-14.557-14.557-14.557S26.943,20.83,26.943,28.857c0,3.254,1.055,6.333,3.05,8.903  C30.349,38.22,30.883,38.461,31.422,38.46z"/></svg>Press Play!<svg class="playIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewbox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M69.492,47.96c-0.941,0-1.83,0.222-2.625,0.606c-0.653-2.641-3.036-4.606-5.875-4.606c-1.215,0-2.344,0.362-3.292,0.979  c-1.056-1.78-2.993-2.979-5.208-2.979c-0.869,0-1.694,0.188-2.442,0.519V31.59c0-3.341-2.718-6.058-6.058-6.058  s-6.058,2.717-6.058,6.058v20.293c-5.254,3.246-8.25,7.986-8.25,13.135c0,12.646,10.288,22.933,22.934,22.933  c12.645,0,22.933-10.287,22.933-22.933v-11C75.55,50.677,72.832,47.96,69.492,47.96z M71.934,65.018  c0,10.651-8.666,19.317-19.316,19.317c-10.652,0-19.317-8.666-19.317-19.317c0-3.225,1.66-6.288,4.634-8.711v5.461  c0,0.998,0.81,1.808,1.808,1.808s1.808-0.81,1.808-1.808V31.59c0-1.347,1.095-2.442,2.442-2.442s2.442,1.096,2.442,2.442v30.178  c0,0.998,0.81,1.808,1.808,1.808s1.808-0.81,1.808-1.808v-13.75c0-1.347,1.095-2.442,2.442-2.442c1.346,0,2.441,1.096,2.441,2.442  c0,0.007,0.002,0.013,0.002,0.02v13.73c0,0.998,0.81,1.808,1.809,1.808c0.998,0,1.808-0.81,1.808-1.808v-11.75  c0-1.347,1.095-2.442,2.44-2.442s2.441,1.096,2.441,2.442v11.75c0,0.998,0.81,1.808,1.809,1.808c0.998,0,1.808-0.81,1.808-1.808  v-7.75c0-1.347,1.095-2.442,2.442-2.442c1.346,0,2.441,1.096,2.441,2.442V65.018z M53.551,28.198c0.289,0,0.583-0.069,0.855-0.216  l6.72-3.619c0.88-0.473,1.208-1.57,0.735-2.449c-0.474-0.879-1.57-1.207-2.449-0.735l-6.72,3.618  c-0.88,0.473-1.208,1.57-0.735,2.449C52.284,27.854,52.907,28.198,53.551,28.198z M35.382,36.227  c-0.473-0.879-1.571-1.206-2.449-0.734l-6.097,3.284c-0.879,0.474-1.208,1.57-0.734,2.449c0.327,0.606,0.95,0.951,1.593,0.951  c0.29,0,0.583-0.07,0.856-0.217l6.097-3.284C35.527,38.202,35.856,37.105,35.382,36.227z M37.166,22.728  c0.327,0.606,0.95,0.951,1.593,0.951c0.29,0,0.583-0.069,0.856-0.216c0.879-0.474,1.208-1.57,0.734-2.449l-3.544-6.578  c-0.473-0.878-1.57-1.208-2.449-0.734c-0.879,0.474-1.208,1.57-0.734,2.449L37.166,22.728z M46.655,22.71  c0.173,0.052,0.348,0.077,0.52,0.077c0.778,0,1.497-0.506,1.731-1.289l2.136-7.12c0.286-0.957-0.256-1.964-1.212-2.251  c-0.958-0.287-1.965,0.256-2.251,1.212l-2.136,7.12C45.156,21.416,45.698,22.423,46.655,22.71z M33.697,30.312  c0.778,0,1.497-0.506,1.731-1.289c0.287-0.957-0.256-1.964-1.212-2.251l-7.438-2.23c-0.959-0.285-1.965,0.256-2.251,1.212  c-0.287,0.957,0.256,1.965,1.212,2.251l7.438,2.23C33.351,30.287,33.525,30.312,33.697,30.312z M52.291,34.08  c-0.287,0.957,0.256,1.965,1.213,2.251l7.699,2.309c0.173,0.053,0.348,0.077,0.52,0.077c0.777,0,1.496-0.506,1.731-1.289  c0.286-0.957-0.257-1.965-1.213-2.251l-7.699-2.309C53.588,32.576,52.578,33.124,52.291,34.08z"/></svg></a>
-			<a class="btn btn-default titleBtn" id="reset" href="#" data-toggle="tooltip" data-placement="top" title="Click or Tap to Reset the Game" onclick="reset()" role="button">Reset</a>
-			<a class="btn btn-default titleBtn" id="settings" href="#" data-toggle="tooltip" data-placement="top" title="Click to view or change settings"  role="button" onclick="settings()">Settings</a>
-			<br/>
-			<button class="btn btn-default titleBtn" id="goToStats">Go to Stats</button>
-			<button class="btn btn-default titleBtn" id="comingSoonBtn" href="#" data-toggle="tooltip" data-placement="top" title="Check out what will be coming out soon">Coming Soon</button>
-			<button class="btn btn-default titleBtn" id="goToCredits">View Credits</button>
-			<div class="well well-lg" id="well">
-				<div id="clockHolder" class="row">
-					<div class="col-md-6">
-						<h2>Player</h2>
-						<div class="col-md-4">
-							
-						</div>
-						<div class="col-md-4">
+</head>
 
-						</div>
-						<div class="col-md-4">
+<body>
+	<div class="modal fade" tabindex="-1" role="dialog" id="switchModal" aria-labelledby="mySwitchingModalLabel">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<p>One fine body&hellip;</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-success">Save changes</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!--Random Extra Modal -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="rExtraModal" aria-labelledby="myExtraModalLabel">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<p>One fine body&hellip;</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-success">Save changes</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!-- Game Modal -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="gameModal" aria-labelledby="myGameModalLabel">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<p>One fine body&hellip;</p>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
-						</div>
+	<div id="content">
+		<h1 id="title">Rock, Paper, Scissors 2.0?<br /><small class="description">Play against the computer or with a
+				friend!</small></h1>
+		<a class="btn btn-default titleBtn" data-toggle="tooltip" data-placement="bottom"
+			title="Click or Tap this to Play!" onclick="start()" role="button" id="start"><svg class="playIcon"
+				xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
+				y="0px" viewbox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
+				<path
+					d="M66.999,45.71c-0.941,0-1.829,0.222-2.625,0.606c-0.653-2.641-3.036-4.606-5.875-4.606c-1.214,0-2.343,0.362-3.292,0.979  c-1.056-1.78-2.992-2.979-5.208-2.979c-0.869,0-1.694,0.188-2.442,0.519V29.34c0-3.34-2.718-6.058-6.058-6.058  S35.441,26,35.441,29.34v20.293c-5.254,3.246-8.25,7.986-8.25,13.135c0,12.646,10.288,22.933,22.933,22.933  s22.933-10.287,22.933-22.933v-11C73.057,48.427,70.34,45.71,66.999,45.71z M69.441,62.768c0,10.651-8.666,19.317-19.317,19.317  s-19.317-8.666-19.317-19.317c0-3.225,1.66-6.288,4.634-8.711v5.461c0,0.998,0.81,1.808,1.808,1.808s1.808-0.81,1.808-1.808V29.34  c0-1.347,1.095-2.441,2.442-2.441s2.442,1.095,2.442,2.441v30.178c0,0.998,0.81,1.808,1.808,1.808s1.808-0.81,1.808-1.808v-13.75  c0-1.347,1.095-2.442,2.442-2.442s2.442,1.096,2.442,2.442c0,0.007,0.002,0.013,0.002,0.02v13.73c0,0.998,0.809,1.808,1.808,1.808  s1.808-0.81,1.808-1.808v-11.75c0-1.347,1.096-2.442,2.44-2.442c1.347,0,2.442,1.096,2.442,2.442v11.75  c0,0.998,0.809,1.808,1.808,1.808s1.808-0.81,1.808-1.808v-7.75c0-1.347,1.096-2.442,2.442-2.442s2.442,1.096,2.442,2.442V62.768z   M31.422,38.46c0.387,0,0.777-0.123,1.107-0.379c0.789-0.612,0.932-1.748,0.32-2.537c-1.498-1.931-2.29-4.243-2.29-6.687  c0-6.033,4.908-10.941,10.941-10.941s10.941,4.908,10.941,10.941c0,1.93-0.513,3.828-1.482,5.49  c-0.502,0.863-0.211,1.97,0.652,2.473c0.861,0.502,1.969,0.213,2.473-0.65c1.291-2.215,1.973-4.743,1.973-7.313  c0-8.027-6.53-14.557-14.557-14.557S26.943,20.83,26.943,28.857c0,3.254,1.055,6.333,3.05,8.903  C30.349,38.22,30.883,38.461,31.422,38.46z" />
+			</svg>Press Play!<svg class="playIcon" xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewbox="0 0 100 125"
+				enable-background="new 0 0 100 100" xml:space="preserve">
+				<path
+					d="M69.492,47.96c-0.941,0-1.83,0.222-2.625,0.606c-0.653-2.641-3.036-4.606-5.875-4.606c-1.215,0-2.344,0.362-3.292,0.979  c-1.056-1.78-2.993-2.979-5.208-2.979c-0.869,0-1.694,0.188-2.442,0.519V31.59c0-3.341-2.718-6.058-6.058-6.058  s-6.058,2.717-6.058,6.058v20.293c-5.254,3.246-8.25,7.986-8.25,13.135c0,12.646,10.288,22.933,22.934,22.933  c12.645,0,22.933-10.287,22.933-22.933v-11C75.55,50.677,72.832,47.96,69.492,47.96z M71.934,65.018  c0,10.651-8.666,19.317-19.316,19.317c-10.652,0-19.317-8.666-19.317-19.317c0-3.225,1.66-6.288,4.634-8.711v5.461  c0,0.998,0.81,1.808,1.808,1.808s1.808-0.81,1.808-1.808V31.59c0-1.347,1.095-2.442,2.442-2.442s2.442,1.096,2.442,2.442v30.178  c0,0.998,0.81,1.808,1.808,1.808s1.808-0.81,1.808-1.808v-13.75c0-1.347,1.095-2.442,2.442-2.442c1.346,0,2.441,1.096,2.441,2.442  c0,0.007,0.002,0.013,0.002,0.02v13.73c0,0.998,0.81,1.808,1.809,1.808c0.998,0,1.808-0.81,1.808-1.808v-11.75  c0-1.347,1.095-2.442,2.44-2.442s2.441,1.096,2.441,2.442v11.75c0,0.998,0.81,1.808,1.809,1.808c0.998,0,1.808-0.81,1.808-1.808  v-7.75c0-1.347,1.095-2.442,2.442-2.442c1.346,0,2.441,1.096,2.441,2.442V65.018z M53.551,28.198c0.289,0,0.583-0.069,0.855-0.216  l6.72-3.619c0.88-0.473,1.208-1.57,0.735-2.449c-0.474-0.879-1.57-1.207-2.449-0.735l-6.72,3.618  c-0.88,0.473-1.208,1.57-0.735,2.449C52.284,27.854,52.907,28.198,53.551,28.198z M35.382,36.227  c-0.473-0.879-1.571-1.206-2.449-0.734l-6.097,3.284c-0.879,0.474-1.208,1.57-0.734,2.449c0.327,0.606,0.95,0.951,1.593,0.951  c0.29,0,0.583-0.07,0.856-0.217l6.097-3.284C35.527,38.202,35.856,37.105,35.382,36.227z M37.166,22.728  c0.327,0.606,0.95,0.951,1.593,0.951c0.29,0,0.583-0.069,0.856-0.216c0.879-0.474,1.208-1.57,0.734-2.449l-3.544-6.578  c-0.473-0.878-1.57-1.208-2.449-0.734c-0.879,0.474-1.208,1.57-0.734,2.449L37.166,22.728z M46.655,22.71  c0.173,0.052,0.348,0.077,0.52,0.077c0.778,0,1.497-0.506,1.731-1.289l2.136-7.12c0.286-0.957-0.256-1.964-1.212-2.251  c-0.958-0.287-1.965,0.256-2.251,1.212l-2.136,7.12C45.156,21.416,45.698,22.423,46.655,22.71z M33.697,30.312  c0.778,0,1.497-0.506,1.731-1.289c0.287-0.957-0.256-1.964-1.212-2.251l-7.438-2.23c-0.959-0.285-1.965,0.256-2.251,1.212  c-0.287,0.957,0.256,1.965,1.212,2.251l7.438,2.23C33.351,30.287,33.525,30.312,33.697,30.312z M52.291,34.08  c-0.287,0.957,0.256,1.965,1.213,2.251l7.699,2.309c0.173,0.053,0.348,0.077,0.52,0.077c0.777,0,1.496-0.506,1.731-1.289  c0.286-0.957-0.257-1.965-1.213-2.251l-7.699-2.309C53.588,32.576,52.578,33.124,52.291,34.08z" />
+			</svg></a>
+		<a class="btn btn-default titleBtn" id="reset" href="#" data-toggle="tooltip" data-placement="top"
+			title="Click or Tap to Reset the Game" onclick="reset()" role="button">Reset</a>
+		<a class="btn btn-default titleBtn" id="settings" href="#" data-toggle="tooltip" data-placement="top"
+			title="Click to view or change settings" role="button" onclick="settings()">Settings</a>
+		<br />
+		<button class="btn btn-default titleBtn" id="goToStats">Go to Stats</button>
+		<button class="btn btn-default titleBtn" id="comingSoonBtn" href="#" data-toggle="tooltip" data-placement="top"
+			title="Check out what will be coming out soon">Coming Soon</button>
+		<button class="btn btn-default titleBtn" id="goToCredits">View Credits</button>
+		<div class="well well-lg" id="well">
+			<div id="clockHolder" class="row">
+				<div class="col-md-6">
+					<h2>Player</h2>
+					<div class="col-md-4">
+
 					</div>
-					<div class="col-md-6">
-						<h2>Opponent</h2>
-						<div class="col-md-4">
+					<div class="col-md-4">
 
-						</div>
-						<div class="col-md-4">
+					</div>
+					<div class="col-md-4">
 
-						</div>
-						<div class="col-md-4">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<h2>Opponent</h2>
+					<div class="col-md-4">
 
-						</div>
+					</div>
+					<div class="col-md-4">
+
+					</div>
+					<div class="col-md-4">
+
 					</div>
 				</div>
 			</div>
-			<button class="btn btn-default titleBtn" onclick="clearWell()">Empty the Board</button>
-			<button class="btn btn-default titleBtn" id="topScroll">Back to Top</button>
-			<button class="btn btn-default titleBtn" id="endGameBtn" onclick="endGame()">End Game</button>
-			<button class="btn btn-default titleBtn" id="cBtn" onclick="game()">Continue your Game</button>
-			<button class="btn btn-default titleBtn" id="scrollToTop">Back to Top</button>
-			<div class="customPanel panel panel-default" id="stats">
-				<div class="panel-heading" onclick="showStats()">
-					<h3>Stats</h3>
-				</div>
-				<div class="panel-body">
-					<!-- Table -->
-					<table class="table table-striped table-hover">
-						<thead>
-							<th>Player</th>
-							<th>Wins</th>
-							<th>Ties</th>
-							<th>Losses</th>
-						</thead>
-						<tbody>
-							<tr id="computerStats">
-								<td class="dataName" rowspan="2" id="computerStat">Player 1</td>
-								<td class="wins" id="win1">5</td>
-								<td class="ties" id="tie1">4</td>
-								<td class="losses" id="loss1">3</td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									<div class="progress">
-										<div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 40%" id="pWin1" title="Percentage of Wins">40%</div>
-										<div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: 30%" id="pTie1" title="Percentage of Ties"></div>
-										<div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 30%" id="pLoss1" title="Percentage of Losses"></div>
-									</div>
-								</td>
-							</tr>
-							<tr id="player1Stats">
-								<td class="dataName" rowspan="2" id="name1">Player 2</td>
-								<td class="wins" id="win2">5</td>
-								<td class="ties" id="tie2">4</td>
-								<td class="losses" id="loss2">3</td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									<div class="progress">
-										<div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 40%" id="pWin2" title="Percentage of Wins"></div>
-										<div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: 30%" id="pTie2" title="Percentage of Ties"></div>
-										<div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 30%" id="pLoss2" title="Percentage of Losses"></div>
-									</div>
-								</td>
-							</tr>
-							<tr id="player2Stats">
-								<td class="dataName" rowspan="2" id="name2">Computer</td>
-								<td class="wins" id="win3">5</td>
-								<td class="ties" id="tie3">4</td>
-								<td class="loss" id="loss3">3</td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									<div class="progress">
-										<div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 40%" id="pWin3" title="Percentage of Wins"></div>
-										<div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: 30%" id="pTie3" title="Percentage of Ties"></div>
-										<div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 30%" id="pLoss3" title="Percentage of Losses"></div>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="usage">
-						<h4>Usage</h4>
-						<div id="chart1" class="thrown">
-							<h5 id="computerName">Computer:</h5>
-							<div class="chart" id="computer"></div>
-							<ul class="list-group">
-								<li class="list-group-item" data-value="50" id="rock1">Rocks <br>0</li>
-								<li class="list-group-item" data-value="25" id="paper1">Papers <br>0</li>
-								<li class="list-group-item" data-value="25" id="scissor1">Scissors <br>0</li>
-							</ul>
-							<h2 class="percentNum">20%</h2>
-						</div>
-						<div id="chart2" class="thrown">
-							<h5 id="player1Name">Player 1:</h5>
-							<div class="chart" id="player1"></div>
-							<ul class="list-group">
-								<li class="list-group-item" data-value="50" id="rock2">Rocks <br>0</li>
-								<li class="list-group-item" data-value="50" id="paper2">Papers <br>0</li>
-								<li class="list-group-item" data-value="50" id="scissor2">Scissors <br>0</li>
-							</ul>
-							<h2 class="percentNum">30%</h2>
-						</div>
-						<div id="chart3" class="thrown">
-							<h5 id="player2Name">Player 2:</h5>
-							<div class="chart" id="player2"></div>
-							<ul class="list-group">
-								<li class="list-group-item" data-value="31" id="rock3">Rocks <br>0</li>
-								<li class="list-group-item" data-value="34" id="paper3">Papers <br>0</li>
-								<li class="list-group-item" data-value="35" id="scissor3">Scissors <br>0</li>
-							</ul>
-							<h2 class="percentNum">40%</h2>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="customPanel panel panel-default" id="coming">
-				<div class="panel-heading" onclick="showCS()">
-					<h3>Coming Soon</h3>
-				</div>
-				<div class="panel-body">
-					<div class="row">
-						<div class="row">
-							<h3>Soon <br/><small>(Alphabetical Order based on App Store Name; I have no preference :)</small></h3>
-						</div>
-						<div class="col-md-4">
-							<img class="cPics" alt="Apple Store Logo" src="/img/appStoreLogo.png"/>
-							<h6>IOS App</h6>
-							<p>I will develop and release an IOS app that is similar to this web app</p>
-							<i class="icon fa fa-apple" aria-hidden="true"></i>
-						</div>
-						<div class="col-md-4">
-							<img class="cPics" alt="Google Play Store Logo" src="/img/googlePlayStoreLogo.png"/>
-							<h6>Android App (Amazon Fire OS Too)</h6>
-							<p>I will develop and release an Android and Fire OS app that is similar to this web app</p>
-							<i class="icon fa fa-android" aria-hidden="true"></i>
-						</div>
-						<div class="col-md-4">
-							<img class="cPics" alt="Windows Store Logo" src="/img/windowsStoreLogo.png"/>
-							<h6>Windows App</h6>
-							<p>I will develop and release a Windows app that is similar to this web app</p>
-							<i class="icon fa fa-windows" aria-hidden="true"></i>
-						</div>
-					</div>
-					<hr/>
-					<div class="row">
-						<div class="row">
-							<h3>Later</h3>
-						</div>
-						<div class="col-md-6">
-							<i class="icon fa fa-users" aria-hidden="true"></i>
-							<h6>Tournament Mode</h6>
-							<p>I will try to implement a local tournament mode that will allow a group of people to set up and play against one another with no restictions on the number of players and maybe a losers 3rd place tournament once some players lose in the main tournament.</p>
-							<i class="icon2 fa fa-table" aria-hidden="true"></i>
-						</div>
-						<div class="col-md-6">
-							<i class="icon fa fa-user" aria-hidden="true"></i> v. <i class="icon fa fa-user" aria-hidden="true"></i>
-							<h6>Online Play</h6>
-							<p>I will try to create online sessions where an individual could set up a game and invite others or play randomly with other people that happen to be online</p>
-						</div>
-					</div>
-					<hr/>
-					<div class="row">
-						<div class="row">
-							<h3>Stretch Goals</h3>
-						</div>
-						<div class="col-md-12">
-							<i class="icon fa fa-bluetooth" aria-hidden="true"></i>
-							<h6>Bluetooth Play</h6>
-							<p>After finishing everything above; perhaps, perhaps I will try to play around and understand bluetooth functionality so that individuals could play against one another from two devices and maybe some sort of bluetooth messaging system.</p>
-							<i class="icon2 fa fa-bluetooth-b" aria-hidden="true"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="creditSection">
-				<a onclick="creditTime()" class="credits">Credits</a>
-				<div class="hiddenSection">
-					<div class="arrow-down"></div>
-					<h4>I would like to thank and give credit to the following people, groups, &#38; companies:</h4>
-					<ul>
-						<li>Three fingers by Herbert Spencer from the Noun Project</li>
-						<li>Two fingers by Herbert Spencer from the Noun Project</li>
-						<li>Fingers Crossed by Till Teenck from the Noun Project</li>
-						<li>Thumbs down by Till Teenck from the Noun Project</li>
-						<li>Click by Sergey Demushkin from the Noun Project</li>
-						<li>Tap by Sergey Demushkin from the Noun Project</li>
-						<li>Hand by Herbert Spencer from the Noun Project</li>
-						<li>Thumbs up by Till Teenck from the Noun Project</li>
-						<li>Fist by Herbert Spencer from the Noun Project</li>					
-						<li>Built with <a href="http://getbootstrap.com/" title="Link to Bootstrap's Website"><img alt="Bootstrap Logo Shown In Purple Background and White Text" height="50px" src="/img/bootstrap-solid.svg"/></a></li>
-						<li><a href="https://thenounproject.com" class="ui_logo"><img id="nounSvg" alt="Noun Project Logo and Name" src="/img/nounPSvg.svg"/> Noun Project</a></li>
-						<li><a class="paulund" href="http://www.paulund.co.uk/how-to-create-an-animated-scroll-to-top-with-jquery">Paulund</a></li>
-						<li><a class="Craig" href="http://www.sitepoint.com/javascript-generate-lighter-darker-color/">Craig Buckler</a></li>
-						<li><a href="http://codepen.io/githiro/" title="Pie Charts by Hiro" id="pieChartCredits">SVG Pie <i class="fa fa-pie-chart" aria-hidden="true"></i> Chart <small>by Hiro</small></a></li>
-						<li><h4>Made with <span style="color:red;">&#10084;</span> by Ola</h4></li>
-					</ul>
-				</div>
-			</div>
-			<br/>
-			<i class="fa fa-copyright" aria-hidden="true"></i> 2015-2016
 		</div>
-		<datalist id="colors">
-			<option value="aliceblue">Alice Blue</option>
-			<option value="antiquewhite">Antique White</option>
-			<option value="aqua">Aqua</option>
-			<option value="aquamarine">Aquamarine</option>
-			<option value="azure">Azure</option>
-			<option value="beige">Beige</option>
-			<option value="bisque">Bisque</option>
-			<option value="black">Black</option>
-			<option value="blanchedAlmond">Blanched Almond</option>
-			<option value="blue">Blue</option>
-			<option value="blueViolet">Blue Violet</option>
-			<option value="brown">Brown</option>
-			<option value="burlywood">Burlywood</option>
-			<option value="cadetBlue">Cadet Blue</option>
-			<option value="chartreuse">Chartreuse</option>
-			<option value="chocolate">Chocolate</option>
-			<option value="coral">Coral</option>
-			<option value="cornflowerBlue">Cornflower Blue</option>
-			<option value="cornsilk">Cornsilk</option>
-			<option value="crimson">Crimson</option>
-			<option value="cyan">Cyan</option>
-			<option value="darkBlue">Dark Blue</option>
-			<option value="darkCyan">Dark Cyan</option>
-			<option value="darkGoldenrod">Dark Goldenrod</option>
-			<option value="darkGray">Dark Gray</option>
-			<option value="darkGreen">Dark Green</option>
-			<option value="darkGrey">Dark Grey</option>
-			<option value="darkKhaki">Dark Khaki</option>
-			<option value="darkMagenta">Dark Magenta</option>
-			<option value="darkOliveGreen">Dark Olive Green</option>
-			<option value="darkOrange">Dark Orange</option>
-			<option value="darkOrchid">Dark Orchid</option>
-			<option value="darkRed">Dark Red</option>
-			<option value="darkSalmon">Dark Salmon</option>
-			<option value="darkSeaGreen">Dark Sea Green</option>
-			<option value="darkSlateBlue">Dark Slate Blue</option>
-			<option value="darkSlateGray">Dark Slate Gray</option>
-			<option value="darkSlateGrey">Dark Slate Grey</option>
-			<option value="darkTurquoise">Dark Turquoise</option>
-			<option value="darkViolet">Dark Violet</option>
-			<option value="deepPink">Deep Pink</option>
-			<option value="deepSkyBlue">Deep Sky Blue</option>
-			<option value="dimGray">Dim Gray</option>
-			<option value="dimGrey">Dim Grey</option>
-			<option value="dodgerBlue">Dodger Blue</option>
-			<option value="fireBrick">Fire Brick</option>
-			<option value="floralWhite">Floral White</option>
-			<option value="forestGreen">Forest Green</option>
-			<option value="fuchsia">Fuchsia</option>
-			<option value="gainsboro">Gainsboro</option>
-			<option value="ghostWhite">Ghost White</option>
-			<option value="gold">Gold</option>
-			<option value="goldenrod">Goldenrod</option>
-			<option value="gray">Gray</option>
-			<option value="green">Green</option>
-			<option value="greenYellow">Green Yellow</option>
-			<option value="grey">Grey</option>
-			<option value="honeydew">Honeydew</option>
-			<option value="hotPink">Hot Pink</option>
-			<option value="indianRed">Indian Red</option>
-			<option value="indigo">Indigo</option>
-			<option value="ivory">Ivory</option>
-			<option value="khaki">Khaki</option>
-			<option value="lavender">Lavender</option>
-			<option value="lavenderBlush">Lavender Blush</option>
-			<option value="lawnGreen">Lawn Green</option>
-			<option value="lemonChiffon">Lemon Chiffon</option>
-			<option value="lightBlue">Light Blue</option>
-			<option value="lightCoral">Light Coral</option>
-			<option value="lightCyan">Light Cyan</option>
-			<option value="lightGoldenrodYellow">Light Goldenrod Yellow</option>
-			<option value="lightGray">Light Gray</option>
-			<option value="lightGreen">Light Green</option>
-			<option value="lightGrey">Light Grey</option>
-			<option value="lightPink">Light Pink</option>
-			<option value="lightSalmon">Light Salmon</option>
-			<option value="lightSeaGreen">Light Sea Green</option>
-			<option value="lightSkyBlue">Light Sky Blue</option>
-			<option value="lightSlateGray">Light Slate Gray</option>
-			<option value="lightSlateGrey">Light Slate Grey</option>
-			<option value="lightSteelBlue">Light Steel Blue</option>
-			<option value="lightYellow">Light Yellow</option>
-			<option value="lime">Lime</option>
-			<option value="limeGreen">Lime Green</option>
-			<option value="linen">Linen</option>
-			<option value="magenta">Magenta</option>
-			<option value="maroon">Maroon</option>
-			<option value="mediumAquamarine">Medium Aquamarine</option>
-			<option value="mediumBlue">Medium Blue</option>
-			<option value="mediumOrchid">Medium Orchid</option>
-			<option value="mediumPurple">Medium Purple</option>
-			<option value="mediumSeaGreen">Medium Sea Green</option>
-			<option value="mediumSlateBlue">Medium Slate Blue</option>
-			<option value="mediumSpringGreen">Medium Spring Green</option>
-			<option value="mediumTurquoise">Medium Turquoise</option>
-			<option value="mediumVioletRed">Medium Violet Red</option>
-			<option value="midnightBlue">Midnight Blue</option>
-			<option value="mintCream">Mint Cream</option>
-			<option value="mistyRose">Misty Rose</option>
-			<option value="moccasin">Moccasin</option>
-			<option value="navajoWhite">Navajo White</option>
-			<option value="navy">Navy</option>
-			<option value="oldLace">Old Lace</option>
-			<option value="olive">Olive</option>
-			<option value="oliveDrab">Olive Drab</option>
-			<option value="orange">Orange</option>
-			<option value="orangeRed">Orange Red</option>
-			<option value="orchid">Orchid</option>
-			<option value="paleGoldenrod">Pale Goldenrod</option>
-			<option value="paleGreen">Pale Green</option>
-			<option value="paleTurquoise">Pale Turquoise</option>
-			<option value="paleVioletRed">Pale Violet Red</option>
-			<option value="papayaWhip">Papaya Whip</option>
-			<option value="peachPuff">Peach Puff</option>
-			<option value="peru">Peru</option>
-			<option value="pink">Pink</option>
-			<option value="plum">Plum</option>
-			<option value="powderBlue">Powder Blue</option>
-			<option value="purple">Purple</option>
-			<option value="red">Red</option>
-			<option value="rosyBrown">Rosy Brown</option>
-			<option value="royalBlue">Royal Blue</option>
-			<option value="saddleBrown">Saddle Brown</option>
-			<option value="salmon">Salmon</option>
-			<option value="sandyBrown">Sandy Brown</option>
-			<option value="seaGreen">Sea Green</option>
-			<option value="seashell">Seashell</option>
-			<option value="sienna">Sienna</option>
-			<option value="silver">Silver</option>
-			<option value="skyBlue">Sky Blue</option>
-			<option value="slateBlue">Slate Blue</option>
-			<option value="slateGray">Slate Gray</option>
-			<option value="slateGrey">Slate Grey</option>
-			<option value="snow">Snow</option>
-			<option value="springGreen">Spring Green</option>
-			<option value="steelBlue">Steel Blue</option>
-			<option value="tan">Tan</option>
-			<option value="teal">Teal</option>
-			<option value="thistle">Thistle</option>
-			<option value="tomato">Tomato</option>
-			<option value="turquoise">Turquoise</option>
-			<option value="violet">Violet</option>
-			<option value="wheat">Wheat</option>
-			<option value="white">White</option>
-			<option value="whiteSmoke">White Smoke</option>
-			<option value="yellow">Yellow</option>
-			<option value="yellowGreen">Yellow Green</option>
-		</datalist>
-		<script src="../js/jquery-2.1.4.min.js"></script>    
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/greensock-js/src/minified/TweenMax.min.js"></script>
-		<script src="../js/flipclock.min.js"></script>
-		<script src="../js/chart.js"></script>
-		<script src="../js/code.js"></script>
-		<script src="../js/animate.js"></script>
-		<!--Created by Ola Bamisaiye just made this for a friend; if you have any tips fill free to message me on Twitter: @olabamisaiye-->
-	</body>
+		<button class="btn btn-default titleBtn" onclick="clearWell()">Empty the Board</button>
+		<button class="btn btn-default titleBtn" id="topScroll">Back to Top</button>
+		<button class="btn btn-default titleBtn" id="endGameBtn" onclick="endGame()">End Game</button>
+		<button class="btn btn-default titleBtn" id="cBtn" onclick="game()">Continue your Game</button>
+		<button class="btn btn-default titleBtn" id="scrollToTop">Back to Top</button>
+		<div class="customPanel panel panel-default" id="stats">
+			<div class="panel-heading" onclick="showStats()">
+				<h3>Stats</h3>
+			</div>
+			<div class="panel-body">
+				<!-- Table -->
+				<table class="table table-striped table-hover">
+					<thead>
+						<th>Player</th>
+						<th>Wins</th>
+						<th>Ties</th>
+						<th>Losses</th>
+					</thead>
+					<tbody>
+						<tr id="computerStats">
+							<td class="dataName" rowspan="2" id="computerStat">Player 1</td>
+							<td class="wins" id="win1">5</td>
+							<td class="ties" id="tie1">4</td>
+							<td class="losses" id="loss1">3</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<div class="progress">
+									<div class="progress-bar progress-bar-success progress-bar-striped active"
+										style="width: 40%" id="pWin1" title="Percentage of Wins">40%</div>
+									<div class="progress-bar progress-bar-warning progress-bar-striped active"
+										style="width: 30%" id="pTie1" title="Percentage of Ties"></div>
+									<div class="progress-bar progress-bar-danger progress-bar-striped active"
+										style="width: 30%" id="pLoss1" title="Percentage of Losses"></div>
+								</div>
+							</td>
+						</tr>
+						<tr id="player1Stats">
+							<td class="dataName" rowspan="2" id="name1">Player 2</td>
+							<td class="wins" id="win2">5</td>
+							<td class="ties" id="tie2">4</td>
+							<td class="losses" id="loss2">3</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<div class="progress">
+									<div class="progress-bar progress-bar-success progress-bar-striped active"
+										style="width: 40%" id="pWin2" title="Percentage of Wins"></div>
+									<div class="progress-bar progress-bar-warning progress-bar-striped active"
+										style="width: 30%" id="pTie2" title="Percentage of Ties"></div>
+									<div class="progress-bar progress-bar-danger progress-bar-striped active"
+										style="width: 30%" id="pLoss2" title="Percentage of Losses"></div>
+								</div>
+							</td>
+						</tr>
+						<tr id="player2Stats">
+							<td class="dataName" rowspan="2" id="name2">Computer</td>
+							<td class="wins" id="win3">5</td>
+							<td class="ties" id="tie3">4</td>
+							<td class="loss" id="loss3">3</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<div class="progress">
+									<div class="progress-bar progress-bar-success progress-bar-striped active"
+										style="width: 40%" id="pWin3" title="Percentage of Wins"></div>
+									<div class="progress-bar progress-bar-warning progress-bar-striped active"
+										style="width: 30%" id="pTie3" title="Percentage of Ties"></div>
+									<div class="progress-bar progress-bar-danger progress-bar-striped active"
+										style="width: 30%" id="pLoss3" title="Percentage of Losses"></div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="usage">
+					<h4>Usage</h4>
+					<div id="chart1" class="thrown">
+						<h5 id="computerName">Computer:</h5>
+						<div class="chart" id="computer"></div>
+						<ul class="list-group">
+							<li class="list-group-item" data-value="50" id="rock1">Rocks <br>0</li>
+							<li class="list-group-item" data-value="25" id="paper1">Papers <br>0</li>
+							<li class="list-group-item" data-value="25" id="scissor1">Scissors <br>0</li>
+						</ul>
+						<h2 class="percentNum">20%</h2>
+					</div>
+					<div id="chart2" class="thrown">
+						<h5 id="player1Name">Player 1:</h5>
+						<div class="chart" id="player1"></div>
+						<ul class="list-group">
+							<li class="list-group-item" data-value="50" id="rock2">Rocks <br>0</li>
+							<li class="list-group-item" data-value="50" id="paper2">Papers <br>0</li>
+							<li class="list-group-item" data-value="50" id="scissor2">Scissors <br>0</li>
+						</ul>
+						<h2 class="percentNum">30%</h2>
+					</div>
+					<div id="chart3" class="thrown">
+						<h5 id="player2Name">Player 2:</h5>
+						<div class="chart" id="player2"></div>
+						<ul class="list-group">
+							<li class="list-group-item" data-value="31" id="rock3">Rocks <br>0</li>
+							<li class="list-group-item" data-value="34" id="paper3">Papers <br>0</li>
+							<li class="list-group-item" data-value="35" id="scissor3">Scissors <br>0</li>
+						</ul>
+						<h2 class="percentNum">40%</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="customPanel panel panel-default" id="coming">
+			<div class="panel-heading" onclick="showCS()">
+				<h3>Coming Soon</h3>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="row">
+						<h3>Soon <br /><small>(Alphabetical Order based on App Store Name; I have no preference
+								:)</small></h3>
+					</div>
+					<div class="col-md-4">
+						<img class="cPics" alt="Apple Store Logo" src="/img/appStoreLogo.png" />
+						<h6>IOS App</h6>
+						<p>I will develop and release an IOS app that is similar to this web app</p>
+						<i class="icon fa fa-apple" aria-hidden="true"></i>
+					</div>
+					<div class="col-md-4">
+						<img class="cPics" alt="Google Play Store Logo" src="/img/googlePlayStoreLogo.png" />
+						<h6>Android App (Amazon Fire OS Too)</h6>
+						<p>I will develop and release an Android and Fire OS app that is similar to this web app</p>
+						<i class="icon fa fa-android" aria-hidden="true"></i>
+					</div>
+					<div class="col-md-4">
+						<img class="cPics" alt="Windows Store Logo" src="/img/windowsStoreLogo.png" />
+						<h6>Windows App</h6>
+						<p>I will develop and release a Windows app that is similar to this web app</p>
+						<i class="icon fa fa-windows" aria-hidden="true"></i>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="row">
+						<h3>Later</h3>
+					</div>
+					<div class="col-md-6">
+						<i class="icon fa fa-users" aria-hidden="true"></i>
+						<h6>Tournament Mode</h6>
+						<p>I will try to implement a local tournament mode that will allow a group of people to set up
+							and play against one another with no restictions on the number of players and maybe a losers
+							3rd place tournament once some players lose in the main tournament.</p>
+						<i class="icon2 fa fa-table" aria-hidden="true"></i>
+					</div>
+					<div class="col-md-6">
+						<i class="icon fa fa-user" aria-hidden="true"></i> v. <i class="icon fa fa-user"
+							aria-hidden="true"></i>
+						<h6>Online Play</h6>
+						<p>I will try to create online sessions where an individual could set up a game and invite
+							others or play randomly with other people that happen to be online</p>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="row">
+						<h3>Stretch Goals</h3>
+					</div>
+					<div class="col-md-12">
+						<i class="icon fa fa-bluetooth" aria-hidden="true"></i>
+						<h6>Bluetooth Play</h6>
+						<p>After finishing everything above; perhaps, perhaps I will try to play around and understand
+							bluetooth functionality so that individuals could play against one another from two devices
+							and maybe some sort of bluetooth messaging system.</p>
+						<i class="icon2 fa fa-bluetooth-b" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="creditSection">
+			<a onclick="creditTime()" class="credits">Credits</a>
+			<div class="hiddenSection">
+				<div class="arrow-down"></div>
+				<h4>I would like to thank and give credit to the following people, groups, &#38; companies:</h4>
+				<ul>
+					<li>Three fingers by Herbert Spencer from the Noun Project</li>
+					<li>Two fingers by Herbert Spencer from the Noun Project</li>
+					<li>Fingers Crossed by Till Teenck from the Noun Project</li>
+					<li>Thumbs down by Till Teenck from the Noun Project</li>
+					<li>Click by Sergey Demushkin from the Noun Project</li>
+					<li>Tap by Sergey Demushkin from the Noun Project</li>
+					<li>Hand by Herbert Spencer from the Noun Project</li>
+					<li>Thumbs up by Till Teenck from the Noun Project</li>
+					<li>Fist by Herbert Spencer from the Noun Project</li>
+					<li>Built with <a href="http://getbootstrap.com/" title="Link to Bootstrap's Website"><img
+								alt="Bootstrap Logo Shown In Purple Background and White Text" height="50px"
+								src="/img/bootstrap-solid.svg" /></a></li>
+					<li><a href="https://thenounproject.com" class="ui_logo"><img id="nounSvg"
+								alt="Noun Project Logo and Name" src="/img/nounPSvg.svg" /> Noun Project</a></li>
+					<li><a class="paulund"
+							href="http://www.paulund.co.uk/how-to-create-an-animated-scroll-to-top-with-jquery">Paulund</a>
+					</li>
+					<li><a class="Craig" href="http://www.sitepoint.com/javascript-generate-lighter-darker-color/">Craig
+							Buckler</a></li>
+					<li><a href="http://codepen.io/githiro/" title="Pie Charts by Hiro" id="pieChartCredits">SVG Pie <i
+								class="fa fa-pie-chart" aria-hidden="true"></i> Chart <small>by Hiro</small></a></li>
+					<li>
+						<h4>Made with <span style="color:red;">&#10084;</span> by Ola</h4>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<br />
+		<i class="fa fa-copyright" aria-hidden="true"></i> 2015-2016
+	</div>
+	<datalist id="colors">
+		<option value="aliceblue">Alice Blue</option>
+		<option value="antiquewhite">Antique White</option>
+		<option value="aqua">Aqua</option>
+		<option value="aquamarine">Aquamarine</option>
+		<option value="azure">Azure</option>
+		<option value="beige">Beige</option>
+		<option value="bisque">Bisque</option>
+		<option value="black">Black</option>
+		<option value="blanchedAlmond">Blanched Almond</option>
+		<option value="blue">Blue</option>
+		<option value="blueViolet">Blue Violet</option>
+		<option value="brown">Brown</option>
+		<option value="burlywood">Burlywood</option>
+		<option value="cadetBlue">Cadet Blue</option>
+		<option value="chartreuse">Chartreuse</option>
+		<option value="chocolate">Chocolate</option>
+		<option value="coral">Coral</option>
+		<option value="cornflowerBlue">Cornflower Blue</option>
+		<option value="cornsilk">Cornsilk</option>
+		<option value="crimson">Crimson</option>
+		<option value="cyan">Cyan</option>
+		<option value="darkBlue">Dark Blue</option>
+		<option value="darkCyan">Dark Cyan</option>
+		<option value="darkGoldenrod">Dark Goldenrod</option>
+		<option value="darkGray">Dark Gray</option>
+		<option value="darkGreen">Dark Green</option>
+		<option value="darkGrey">Dark Grey</option>
+		<option value="darkKhaki">Dark Khaki</option>
+		<option value="darkMagenta">Dark Magenta</option>
+		<option value="darkOliveGreen">Dark Olive Green</option>
+		<option value="darkOrange">Dark Orange</option>
+		<option value="darkOrchid">Dark Orchid</option>
+		<option value="darkRed">Dark Red</option>
+		<option value="darkSalmon">Dark Salmon</option>
+		<option value="darkSeaGreen">Dark Sea Green</option>
+		<option value="darkSlateBlue">Dark Slate Blue</option>
+		<option value="darkSlateGray">Dark Slate Gray</option>
+		<option value="darkSlateGrey">Dark Slate Grey</option>
+		<option value="darkTurquoise">Dark Turquoise</option>
+		<option value="darkViolet">Dark Violet</option>
+		<option value="deepPink">Deep Pink</option>
+		<option value="deepSkyBlue">Deep Sky Blue</option>
+		<option value="dimGray">Dim Gray</option>
+		<option value="dimGrey">Dim Grey</option>
+		<option value="dodgerBlue">Dodger Blue</option>
+		<option value="fireBrick">Fire Brick</option>
+		<option value="floralWhite">Floral White</option>
+		<option value="forestGreen">Forest Green</option>
+		<option value="fuchsia">Fuchsia</option>
+		<option value="gainsboro">Gainsboro</option>
+		<option value="ghostWhite">Ghost White</option>
+		<option value="gold">Gold</option>
+		<option value="goldenrod">Goldenrod</option>
+		<option value="gray">Gray</option>
+		<option value="green">Green</option>
+		<option value="greenYellow">Green Yellow</option>
+		<option value="grey">Grey</option>
+		<option value="honeydew">Honeydew</option>
+		<option value="hotPink">Hot Pink</option>
+		<option value="indianRed">Indian Red</option>
+		<option value="indigo">Indigo</option>
+		<option value="ivory">Ivory</option>
+		<option value="khaki">Khaki</option>
+		<option value="lavender">Lavender</option>
+		<option value="lavenderBlush">Lavender Blush</option>
+		<option value="lawnGreen">Lawn Green</option>
+		<option value="lemonChiffon">Lemon Chiffon</option>
+		<option value="lightBlue">Light Blue</option>
+		<option value="lightCoral">Light Coral</option>
+		<option value="lightCyan">Light Cyan</option>
+		<option value="lightGoldenrodYellow">Light Goldenrod Yellow</option>
+		<option value="lightGray">Light Gray</option>
+		<option value="lightGreen">Light Green</option>
+		<option value="lightGrey">Light Grey</option>
+		<option value="lightPink">Light Pink</option>
+		<option value="lightSalmon">Light Salmon</option>
+		<option value="lightSeaGreen">Light Sea Green</option>
+		<option value="lightSkyBlue">Light Sky Blue</option>
+		<option value="lightSlateGray">Light Slate Gray</option>
+		<option value="lightSlateGrey">Light Slate Grey</option>
+		<option value="lightSteelBlue">Light Steel Blue</option>
+		<option value="lightYellow">Light Yellow</option>
+		<option value="lime">Lime</option>
+		<option value="limeGreen">Lime Green</option>
+		<option value="linen">Linen</option>
+		<option value="magenta">Magenta</option>
+		<option value="maroon">Maroon</option>
+		<option value="mediumAquamarine">Medium Aquamarine</option>
+		<option value="mediumBlue">Medium Blue</option>
+		<option value="mediumOrchid">Medium Orchid</option>
+		<option value="mediumPurple">Medium Purple</option>
+		<option value="mediumSeaGreen">Medium Sea Green</option>
+		<option value="mediumSlateBlue">Medium Slate Blue</option>
+		<option value="mediumSpringGreen">Medium Spring Green</option>
+		<option value="mediumTurquoise">Medium Turquoise</option>
+		<option value="mediumVioletRed">Medium Violet Red</option>
+		<option value="midnightBlue">Midnight Blue</option>
+		<option value="mintCream">Mint Cream</option>
+		<option value="mistyRose">Misty Rose</option>
+		<option value="moccasin">Moccasin</option>
+		<option value="navajoWhite">Navajo White</option>
+		<option value="navy">Navy</option>
+		<option value="oldLace">Old Lace</option>
+		<option value="olive">Olive</option>
+		<option value="oliveDrab">Olive Drab</option>
+		<option value="orange">Orange</option>
+		<option value="orangeRed">Orange Red</option>
+		<option value="orchid">Orchid</option>
+		<option value="paleGoldenrod">Pale Goldenrod</option>
+		<option value="paleGreen">Pale Green</option>
+		<option value="paleTurquoise">Pale Turquoise</option>
+		<option value="paleVioletRed">Pale Violet Red</option>
+		<option value="papayaWhip">Papaya Whip</option>
+		<option value="peachPuff">Peach Puff</option>
+		<option value="peru">Peru</option>
+		<option value="pink">Pink</option>
+		<option value="plum">Plum</option>
+		<option value="powderBlue">Powder Blue</option>
+		<option value="purple">Purple</option>
+		<option value="red">Red</option>
+		<option value="rosyBrown">Rosy Brown</option>
+		<option value="royalBlue">Royal Blue</option>
+		<option value="saddleBrown">Saddle Brown</option>
+		<option value="salmon">Salmon</option>
+		<option value="sandyBrown">Sandy Brown</option>
+		<option value="seaGreen">Sea Green</option>
+		<option value="seashell">Seashell</option>
+		<option value="sienna">Sienna</option>
+		<option value="silver">Silver</option>
+		<option value="skyBlue">Sky Blue</option>
+		<option value="slateBlue">Slate Blue</option>
+		<option value="slateGray">Slate Gray</option>
+		<option value="slateGrey">Slate Grey</option>
+		<option value="snow">Snow</option>
+		<option value="springGreen">Spring Green</option>
+		<option value="steelBlue">Steel Blue</option>
+		<option value="tan">Tan</option>
+		<option value="teal">Teal</option>
+		<option value="thistle">Thistle</option>
+		<option value="tomato">Tomato</option>
+		<option value="turquoise">Turquoise</option>
+		<option value="violet">Violet</option>
+		<option value="wheat">Wheat</option>
+		<option value="white">White</option>
+		<option value="whiteSmoke">White Smoke</option>
+		<option value="yellow">Yellow</option>
+		<option value="yellowGreen">Yellow Green</option>
+	</datalist>
+	<script src="./js/jquery-2.1.4.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/greensock-js/src/minified/TweenMax.min.js"></script>
+	<script src="./js/flipclock.min.js"></script>
+	<script src="./js/chart.js"></script>
+	<script src="./js/code.js"></script>
+	<script src="./js/animate.js"></script>
+	<!--Created by Ola Bamisaiye just made this for a friend; if you have any tips fill free to message me on Twitter: @olabamisaiye-->
+</body>
+
 </html>
